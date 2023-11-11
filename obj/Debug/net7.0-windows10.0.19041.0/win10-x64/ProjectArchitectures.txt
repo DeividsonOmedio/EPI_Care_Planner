@@ -1,0 +1,1 @@
+C:\Users\deividson\Documents\App.Net-Maui-Controle_EPI\Epi_Care_Planner\Epi_Care_Planner.csproj;x64

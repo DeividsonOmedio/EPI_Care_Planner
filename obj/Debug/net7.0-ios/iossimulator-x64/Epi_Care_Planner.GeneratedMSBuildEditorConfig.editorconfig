@@ -1,0 +1,119 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Epi_Care_Planner
+build_property.ProjectDir = C:\Users\deividson\Documents\App.Net-Maui-Controle_EPI\Epi_Care_Planner\
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AdministradorPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AdministradorPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AdministradorPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AdministradorPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AdministradorPages/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AdministradorPages.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AdministradorPages\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AdministradorPages\DashboardPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AdministradorPages/EpiPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AdministradorPages.EpiPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AdministradorPages\EpiPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AdministradorPages\EpiPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AdministradorPages/FuncionariosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AdministradorPages.FuncionariosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AdministradorPages\FuncionariosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AdministradorPages\FuncionariosPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AlmoxarifePages/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AlmoxarifePages.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AlmoxarifePages\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AlmoxarifePages\DashboardPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AlmoxarifePages/EmprestadosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AlmoxarifePages.EmprestadosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AlmoxarifePages\EmprestadosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AlmoxarifePages\EmprestadosPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/AlmoxarifePages/EpiPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.AlmoxarifePages.EpiPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AlmoxarifePages\EpiPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AlmoxarifePages\EpiPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/FuncionarioPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.FuncionarioPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FuncionarioPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FuncionarioPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/FuncionarioPages/AlmoxarifePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.FuncionarioPages.AlmoxarifePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FuncionarioPages\AlmoxarifePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FuncionarioPages\AlmoxarifePage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/FuncionarioPages/DashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.FuncionarioPages.DashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FuncionarioPages\DashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FuncionarioPages\DashboardPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/FuncionarioPages/ListaEpiPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.FuncionarioPages.ListaEpiPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FuncionarioPages\ListaEpiPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FuncionarioPages\ListaEpiPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/FuncionarioPages/SolicitacaoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.FuncionarioPages.SolicitacaoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\FuncionarioPages\SolicitacaoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\FuncionarioPages\SolicitacaoPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Pages/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Pages.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/deividson/Documents/App.Net-Maui-Controle_EPI/Epi_Care_Planner/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Epi_Care_Planner.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

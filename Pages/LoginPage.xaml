@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epi_Care_Planner.Pages.LoginPage"
+             Title="LoginPage">
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 Margin="16"
+                 Padding="16">
+
+        <Label
+            Text="LOGIN"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Label
+            x:Name="lblUser"
+            Text="E-mail"/>
+        <Entry
+            Placeholder="Digite seu e-mail"
+            x:Name="txtUser"/>
+
+        <Label
+             x:Name="lblSenha"
+             Text="E-mail"/>
+        <Entry
+             Placeholder="Digite sua senha"
+             x:Name="txtSenha"
+             IsPassword="True"/>
+
+        <Button
+            Text="Entrar"
+            x:Name="btnEntrar"
+            Clicked="btnEntrar_Clicked"
+            Margin="16"/>
+
+        <Label
+            x:Name="result"
+            Text=""
+            Margin="16"/>
+
+        <Button
+             Text="EntrarAdm"
+             x:Name="btnEntrarAdm"
+             Clicked="btnEntrarAdm_Clicked"
+             Margin="16"/>
+        <Button
+             Text="EntrarAlm"
+             x:Name="btnEntrarAlm"
+             Clicked="btnEntrarAlm_Clicked"
+             Margin="16"/>
+        <Button
+             Text="EntrarFunc"
+             x:Name="btnEntrarFun"
+             Clicked="btnEntrar_Func_Clicked"
+             Margin="16"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epi_Care_Planner.Pages.FuncionarioPages.SolicitacaoPage"
+             Title="Solicitacao">
+    <VerticalStackLayout>
+        <Label 
+            Text="Solicitar EPI"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            TextTransform="Uppercase"/>
+        
+        <Label
+            Text="Nome do EPI"/>
+        <Picker 
+            x:Name="pickerEpi"
+            Title="Selecione um EPI"
+            TextColor="Silver"
+            BackgroundColor="Black"
+            SelectedIndexChanged="pickerEpi_SelectedIndexChanged">
+            
+        </Picker>
+        <Label
+            Text="Para Quando"/>
+
+        <Picker 
+         x:Name="pickerQuando"
+         Title="Selecione uma opção"
+         TextColor="Silver"
+         BackgroundColor="Black"
+         SelectedIndexChanged="pickerQuando_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Agora</x:String>
+                <x:String>Agendar</x:String>
+            </Picker.Items>
+        </Picker>
+        <Entry
+            Placeholder="Digite Data/Hora"
+            x:Name="txtAgendar"
+            BackgroundColor="GreenYellow"
+            Keyboard="Text"
+            WidthRequest="200"
+            ClearButtonVisibility="WhileEditing"
+            IsVisible="false"/>
+        <Label
+            Text="Comentario"/>
+        <Entry
+            Placeholder="Comente se achar necessário"
+            x:Name="txtcomentario"
+            BackgroundColor="GreenYellow"
+            Keyboard="Text"
+            WidthRequest="200"
+            ClearButtonVisibility="WhileEditing"/>
+
+        <Button
+            Text="Solicitar"
+            x:Name="btnSolicitarEmprestimo"
+            Clicked="btnSolicitarEmprestimo_Clicked"
+            Margin="16"
+            TextColor="Black"/>     
+    </VerticalStackLayout>
+</ContentPage>

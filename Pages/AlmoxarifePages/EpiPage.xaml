@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.EpiPage"
+             Title="EpiPage">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Button 
+            IsVisible="True"
+            x:Name="btnBuscarEpi"
+            Text="Buscar EPI"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"
+            Margin="16"
+            TextColor="Black"
+            WidthRequest="200"
+
+            Clicked="btnBuscarEpi_Clicked"/>
+
+        <VerticalStackLayout
+            IsVisible="False"
+            x:Name="tagBuscaEpi"
+            HorizontalOptions="Center"
+            Margin="16">
+
+            <Label
+            Text="Nome do EPI"/>
+            <Entry
+                Placeholder="Digite o nome do EPI"
+                x:Name="txtNomeEpiBusca"
+                BackgroundColor="GreenYellow"
+                Keyboard="Text"
+                WidthRequest="200"
+                ClearButtonVisibility="WhileEditing"/>
+            <Button
+                x:Name="btnProcurarEpiPorNome"
+                Text="Procurar"
+                Margin="16"
+                TextColor="Black"
+                Clicked="btnProcurarEpiPorNome_Clicked"/>
+
+
+
+            <Label
+                Text="Digite o codigo do EPI"/>
+            <Entry
+                Placeholder="Digite o codigo do EPI"
+                x:Name="txtCodigoEpiBusca"
+                BackgroundColor="GreenYellow"
+                Keyboard="Numeric"
+                WidthRequest="200"
+                ClearButtonVisibility="WhileEditing"/>
+            <Button
+                x:Name="btnProcurarEpiPorCodigo"
+                Text="Procurar"
+                Margin="16"
+                TextColor="Black"
+                Clicked="btnProcurarEpiPorCodigo_Clicked"/>
+
+            <VerticalStackLayout
+                x:Name="resultadoBusca"
+                IsVisible="false">
+
+                <Label
+                    Text="Codigo"/>
+                <Label
+                    x:Name="lblCodigoBuscado"/>
+
+                <Label
+                     Text="Nome"/>
+                <Label
+                    x:Name="lblNomeBuscado"/>
+                <Label
+                    Text="Decrição"/>
+                <Label
+                    x:Name="lblDescricaoBuscado"/>
+                <Label
+                    Text="Categoria"/>
+                <Label
+                     x:Name="lblCategoriaBuscado"/>
+                <Label
+                     Text="Quantidade Atual"/>
+                <Label
+                     x:Name="lblQdadeBuscado"/>
+
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+        <!-- Adicionar Epi-->
+        <Button 
+            IsVisible="True"
+            x:Name="btnAdionarEpi"
+             Text="Adicionar Novo EPI"
+             VerticalOptions="Center" 
+             HorizontalOptions="Start"
+             Margin="16"
+             WidthRequest="200"
+             TextColor="Black"
+             Clicked="btnAdionarEpi_Clicked"/>
+
+        <VerticalStackLayout
+                    IsVisible="False"
+                 x:Name="tagAdicionarEpi"
+                HorizontalOptions="Center">
+
+
+            <Label
+                    Margin="0, 10, 0, 0"
+                     Text="Codigo do Epi"/>
+            <Entry
+                    x:Name="txtCodigoNovoEpi"
+                    Placeholder="Digite o Codigo do Epi"/>
+
+            <Label  
+                    Margin="0, 10, 0, 0"
+                    Text="Nome do Epi"/>
+            <Entry
+                    Placeholder="Digite o nome do EPI"
+                    x:Name="txtNomeEpiNovo"/>
+
+            <Label
+                    Margin="0, 10, 0, 0"
+                    Text="Descrição do Epi"/>
+            <Entry
+                    Placeholder="Digite a Descrição do Epi"
+                    x:Name="txtDescricaoEpiNovo"/>
+
+            <Label
+                     Margin="0, 10, 0, 0"
+                     Text="Categoria do Epi"/>
+            <Entry
+                    Placeholder="Digite a Categoria do Epi"
+                    x:Name="txtCategoriaEpiNovo"/>
+
+            <Label
+                     Text="Quantidade de Epi's"/>
+            <Entry
+                    Placeholder="Digite a Quantidade de Epi's"
+                    x:Name="txtQuantidadeEpiNovo" />
+
+
+            <Button
+                    Margin="0, 20, 0, 0"
+                    x:Name="btnNovoEpi"
+                    Text="Adicionar"
+                    TextColor="Black"
+                    Clicked="btnNovoEpi_Clicked"/>
+
+        </VerticalStackLayout>
+
+        <Button 
+            IsVisible="True"
+            x:Name="btnListarEpis"
+            Text="Listar EPI's"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="0, 0, 0, 16"
+            TextColor="Black"
+            WidthRequest="200"
+            Clicked="btnListarEpis_Clicked"/>
+
+        <VerticalStackLayout
+                IsVisible="false"
+             x:Name="tagListarEpi">
+
+
+            <Grid
+                   Margin="16, 16, 0, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+
+                <Label Text="Codigo" />
+                <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center"/>
+                <Label Grid.Column="2" Text="Quantidade Atual" HorizontalOptions="Start" TranslationX="1"  FontSize="12" HorizontalTextAlignment="Center"/>
+            </Grid>
+
+
+            <CollectionView
+           
+            HorizontalScrollBarVisibility="Always"
+            
+            x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400"
+            IsVisible="False">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid 
+                        >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Frame
+                            BorderColor="Green"
+                            CornerRadius="0"
+                            >
+                                <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center"/>
+                            </Frame>
+                            <Frame 
+                            Grid.Column="1"
+                            BorderColor="Green"
+                             CornerRadius="0">
+                                <Label  Text="{Binding Nome}"  TextColor="Black"/>
+                            </Frame>
+                            <Frame 
+                            Grid.Column="2"
+                            BorderColor="Green"
+                             CornerRadius="0">
+                                <Label Grid.Column="2" Text="{Binding QuantidadeAtual}" TextColor="Black"/>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+        <Button
+            IsVisible="true"
+            x:Name="btnCancelarBusca"
+            Text="Cancelar"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="16"
+            TextColor="Black"
+            Clicked="btnCancelarBusca_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
