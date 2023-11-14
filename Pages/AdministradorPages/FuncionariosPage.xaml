@@ -4,7 +4,8 @@
              x:Class="Epi_Care_Planner.Pages.AdministradorPages.FuncionariosPage"
              Title="FuncionariosPage">
     <VerticalStackLayout
-        VerticalOptions="Center">
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
         <Button
             IsVisible="True"
             Text="Adicionar Funcionario"
@@ -17,7 +18,10 @@
 
         <VerticalStackLayout
             IsVisible="False"
-            x:Name="tagAddFunc">
+            x:Name="tagAddFunc"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="26">
             
             <Label 
             Text="Adicionar Funcionario"
@@ -26,7 +30,7 @@
             
             FontSize="Title"
             VerticalOptions="Center" 
-            HorizontalOptions="FillAndExpand"
+            HorizontalOptions="Center"
             Opacity="0.3"
             Margin="56"
             TextColor="Green"
@@ -114,8 +118,8 @@
 
 
 
-            <Label Text="Matricula" />
-            <Label Grid.Column="1" Text="Nome" HorizontalOptions="Start"/>
+            <Label Text="Matricula" HorizontalOptions="Center"/>
+            <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center"/>
             <Label Grid.Column="2" Text="Função" HorizontalOptions="Center"/>
         </Grid>
 
@@ -124,7 +128,7 @@
    
             HorizontalScrollBarVisibility="Always"
     
-            x:Name="ListaDosFunc" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400">
+            x:Name="ListaDosFunc" Grid.Row="4" Margin="2, 10, 2, 10" MaximumHeightRequest="400">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate >
@@ -132,7 +136,7 @@
                 >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
@@ -141,7 +145,7 @@
                     BorderColor="Green"
                     CornerRadius="0"
                     >
-                            <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Small"/>
                         </Frame>
                         <Frame 
                     Grid.Column="1"

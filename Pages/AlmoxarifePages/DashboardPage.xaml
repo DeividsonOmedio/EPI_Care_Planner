@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.DashboardPage"
              Title="DashboardPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout 
+                        VerticalOptions="CenterAndExpand">
         <Label 
             Text="Solicitação de EPI"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
-            Margin="16"/>
+            Margin="16"
+            FontSize="Title"
+            TextTransform="Uppercase"
+            FontAttributes="Bold"/>
 
 
 
@@ -19,77 +23,185 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
 
 
-            <Label Text="EPI" />
-            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="End"/>
-            <Label Grid.Column="2" Text="Data Retirada" HorizontalOptions="Center" TranslationX="20"/>
+            <Label Text="EPI" TranslationX="20"/>
+            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"/>
+            <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"/>
             <Label Grid.Column="3" Text="Comentario" HorizontalOptions="End"/>
-            <Label Grid.Column="4" Text="Confirmar" HorizontalOptions="Center" TranslationX="20"/>
         </Grid>
 
 
         <CollectionView
-   
-    HorizontalScrollBarVisibility="Always"
-    
-    x:Name="ListaSolicitacoes" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400"
-    IsVisible="False">
+                HorizontalScrollBarVisibility="Always"
+                x:Name="ListaSolicitacoes" 
+                Grid.Row="4" 
+                Margin="0, 10, 0, 10"
+                MaximumHeightRequest="400">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Confirmar"
+                                           BackgroundColor="LightGreen"
+                                           
+                                           Invoked="SwipeItem_Invoked_Confirmar" />
+                                <SwipeItem Text="Recusar"
+                                           BackgroundColor="LightPink"
+                                           Invoked="SwipeItem_Invoked_Recusar" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
 
-                        <Frame
-                                BorderColor="Red"
+                            <Frame
+                                BorderColor="DarkGreen"
                                 CornerRadius="0"
                                 >
-                            <Label Text="{Binding EpiId}" TextColor="Black" VerticalTextAlignment="Center"/>
-                        </Frame>
-                        <Frame 
+                                <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
+                            </Frame>
+                            <Frame 
                                 Grid.Column="1"
-                                BorderColor="Red"
+                                BorderColor="DarkGreen"
                                  CornerRadius="0">
-                            <Label  Text="{Binding FuncionarioId}"  TextColor="Black"/>
-                        </Frame>
-                        <Frame 
+                                <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Small"/>
+                            </Frame>
+                            <Frame 
                                 Grid.Column="2"
-                                BorderColor="Red"
+                                BorderColor="DarkGreen"
                                  CornerRadius="0">
-                            <Label Grid.Column="2" Text="{Binding ComentarioFuncionario}" TextColor="Black"/>
-                        </Frame>
-                        <Frame 
+                                <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black" FontSize="Micro"/>
+                            </Frame>
+                            
+                            <Frame 
                                 Grid.Column="3"
-                                BorderColor="Red"
+                                BorderColor="DarkGreen"
                                  CornerRadius="0">
-                            <HorizontalStackLayout>
-                                <Button  Text="" TextColor="Green" WidthRequest="10" x:Name="CorfimarEprestimo" Clicked="CorfimarEprestimo_Clicked"/>
-                                <Button  Text="" TextColor="Red" WidthRequest="10"  x:Name="RecusarEprestimo" Clicked="RecusarEprestimo_Clicked"/>
-                            </HorizontalStackLayout>
-                        </Frame>
-                        <Frame 
-                                Grid.Column="4"
-                                BorderColor="Red"
-                                 CornerRadius="0">
-                            <Label  Text="{Binding }" TextColor="Black"/>
-                        </Frame>
-                    </Grid>
+                                <Label  Text="{Binding ComentarioFuncionario}" TextColor="Black" FontSize="Micro"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
         </CollectionView>
 
+        <!--Solicitacoes Confirmadas-->
+
+        <Label 
+                Text="Solicitação Confirmadas"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Margin="16"
+                FontSize="Title"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"/>
+
+        <Grid
+   Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="EPI" TranslationX="20"/>
+            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"/>
+            <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"/>
+        </Grid>
+
+        <CollectionView
+          HorizontalScrollBarVisibility="Always"
+          x:Name="ListaConfirmadas" 
+          Grid.Row="4" 
+          Margin="0, 10, 0, 10"
+          MaximumHeightRequest="400">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Confirmar Emprestimo"
+                                     BackgroundColor="LightGreen"
+                                     
+                                     Invoked="SwipeItem_Invoked_Emprestado" />
+                                <SwipeItem Text="Cancelado"
+                                     BackgroundColor="LightPink"
+                                     Invoked="SwipeItem_Invoked_Cancelado" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <VerticalStackLayout>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+
+                            <Frame
+                          BorderColor="DarkGreen"
+                          CornerRadius="0"
+                          >
+                                <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
+                            </Frame>
+                            <Frame 
+                          Grid.Column="1"
+                          BorderColor="DarkGreen"
+                           CornerRadius="0">
+                                <Label  Text="{Binding Funcionario}"  TextColor="Black"/>
+                            </Frame>
+                            <Frame 
+                          Grid.Column="2"
+                          BorderColor="DarkGreen"
+                           CornerRadius="0">
+                                <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black"/>
+                            </Frame>
+
+                           
+                        </Grid>
+                        <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Comentario"/>
+                                <Frame 
+                                   
+                                BorderColor="DarkGreen"
+                                 CornerRadius="0"
+                                    Padding="10">
+                                    <VerticalStackLayout>
+                                        <Label Text="Comentario:" TextColor="Black" FontSize="Micro"/>
+                                        <Label  Text="{Binding ComentarioAlmoxarife}" TextColor="Black" HorizontalTextAlignment="Center"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
 
     </VerticalStackLayout>
 </ContentPage>

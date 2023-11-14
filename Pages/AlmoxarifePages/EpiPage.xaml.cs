@@ -1,5 +1,6 @@
 using Epi_Care_Planner.Context;
 using Epi_Care_Planner.Model;
+using Epi_Care_Planner.Pages.Modal;
 
 namespace Epi_Care_Planner.Pages.AlmoxarifePages;
 
@@ -38,6 +39,7 @@ public partial class EpiPage : ContentPage
     {
         tagBuscaEpi.IsVisible = true;
         btnAdionarEpi.IsVisible = false;
+        btnBuscarEpi.IsVisible = false;
         tagAdicionarEpi.IsVisible = false;
         tagListarEpi.IsVisible = false;
         btnListarEpis.IsVisible = false;
@@ -91,11 +93,7 @@ public partial class EpiPage : ContentPage
         var result = _context.epis.FirstOrDefault(x => x.Nome.Contains(nomeBusca));
         if (result != null)
         {
-            lblCodigoBuscado.Text = result.Codigo;
-            lblNomeBuscado.Text = result.Nome;
-            lblDescricaoBuscado.Text = result.Descricao;
-            lblCategoriaBuscado.Text = result.Categoria;
-            lblQdadeBuscado.Text = Convert.ToString(result.QuantidadeAtual);
+            Navigation.PushModalAsync(new ModalEpi(result));
 
         }
         else
@@ -110,15 +108,11 @@ public partial class EpiPage : ContentPage
 
     private void btnProcurarEpiPorCodigo_Clicked(object sender, EventArgs e)
     {
-        var codeBusca = txtNomeEpiBusca.Text;
+        var codeBusca = txtCodigoEpiBusca.Text;
         var result = _context.epis.FirstOrDefault(x => x.Codigo == codeBusca);
         if (result != null)
         {
-            lblCodigoBuscado.Text = result.Codigo;
-            lblNomeBuscado.Text = result.Nome;
-            lblDescricaoBuscado.Text = result.Descricao;
-            lblCategoriaBuscado.Text = result.Categoria;
-            lblQdadeBuscado.Text = Convert.ToString(result.QuantidadeAtual);
+            Navigation.PushModalAsync(new ModalEpi(result));
 
         }
         else
@@ -140,7 +134,12 @@ public partial class EpiPage : ContentPage
         ListaEpisBanco.IsVisible = false;
     }
 
-   
-        
-    
+
+    private void detalhesSwipe_Invoked(object sender, EventArgs e)
+    {
+        SwipeItem swipeItem = (SwipeItem)sender;
+        Epi item = (Epi)swipeItem.BindingContext;
+        Navigation.PushModalAsync(new ModalEpi(item));
+    }
+
 }

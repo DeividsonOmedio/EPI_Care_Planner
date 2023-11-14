@@ -5,8 +5,94 @@
              Title="EmprestadosPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="EPI's Emprestados"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+            Margin="50"
+            FontSize="Title"
+            TextTransform="Uppercase"
+            FontAttributes="Bold"
+            Opacity=".6"/>
+
+
+
+        <Grid
+           Margin="0, 50, 10, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"/>
+            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"/>
+            <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"/>
+            <Label Grid.Column="3" Text="Previsao" HorizontalOptions="Center" FontSize="Small"/>
+        </Grid>
+
+
+        <CollectionView
+   
+    HorizontalScrollBarVisibility="Always"
+    
+    x:Name="ListaEpisEmprestados" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Devolução"
+                                           x:Name="swpDevolucao"
+                                             BackgroundColor="LightGreen"
+                                             Invoked="swpDevolucao_Invoked" />
+
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Frame
+                    BorderColor="Green"
+                    CornerRadius="0"
+                    >
+                                <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
+                            </Frame>
+                            <Frame 
+                    Grid.Column="1"
+                    BorderColor="Green"
+                     CornerRadius="0">
+                                <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Micro"/>
+                            </Frame>
+                            <Frame 
+                    Grid.Column="2"
+                    BorderColor="Green"
+                     CornerRadius="0">
+                                <Label Grid.Column="2" Text="{Binding DataEmpretimo}" TextColor="Black" FontSize="Micro"/>
+                            </Frame>
+                            <Frame 
+                    Grid.Column="3"
+                    BorderColor="Green"
+                     CornerRadius="0">
+                                <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black" FontSize="Micro"/>
+                            </Frame>
+
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
     </VerticalStackLayout>
 </ContentPage>

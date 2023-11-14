@@ -8,8 +8,8 @@ namespace Epi_Care_Planner.Pages.FuncionarioPages;
 
 public partial class SolicitacaoPage : ContentPage
 {
-    string picker = "Agora";
-    Epi epiId = new Epi();
+    string picker = "";
+    string funcaoCaptada = "";
     public Usuario UsuarioLogado { get; set; }
 
     private AppDbContext _context = new AppDbContext();
@@ -25,9 +25,8 @@ public partial class SolicitacaoPage : ContentPage
         List<string> lista = new List<string>();
         var listaEpi = _context.epis.ToList();
         listaEpi.ForEach(listaEpi => { lista.Add(listaEpi.Nome); });
-      
-        pickerEpi.ItemsSource = lista.ToList();
-        pickerEpi.ItemDisplayBinding = new Binding("Epi");
+
+        pickerEpi.ItemsSource = listaEpi;
     }
     private void pickerEpi_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -35,8 +34,8 @@ public partial class SolicitacaoPage : ContentPage
         int selectedIndex = pic.SelectedIndex;
         if (selectedIndex != -1)
         {
-            var nome = pic.Items[selectedIndex];
-            epiId = _context.epis.FirstOrDefault(x => x.Nome == nome);
+            funcaoCaptada = pic.Items[selectedIndex];
+             
             
         }
         
@@ -53,29 +52,42 @@ public partial class SolicitacaoPage : ContentPage
         }
         if (picker == "Agendar")
             txtAgendar.IsVisible = true;
+        
+            
     }
-
+    
     private void btnSolicitarEmprestimo_Clicked(object sender, EventArgs e)
     {
+        if(string.IsNullOrEmpty(funcaoCaptada) || string.IsNullOrEmpty(picker))
+        {
+            DisplayAlert("Atenção", "Selecione um EPI e Para Quando é o emprestimo", "Fechar");
+            return;
+        }
+        if (picker == "Agendar")
+            picker = txtAgendar.Text;
         Emprestimo novoEmprestimo = new Emprestimo();
-        novoEmprestimo.EpiId = epiId;
-        novoEmprestimo.FuncionarioId = UsuarioLogado;
+        novoEmprestimo.Epi = funcaoCaptada;
+        novoEmprestimo.Funcionario = UsuarioLogado.Name;
         novoEmprestimo.DataPrevisaoEmprestimo = picker;
         novoEmprestimo.DataPrevisaoDevolucao = "";
         novoEmprestimo.DataEmpretimo = "";
         novoEmprestimo.Status = "pendente";
         novoEmprestimo.ComentarioFuncionario = txtcomentario.Text;
+        novoEmprestimo.DataSolicitacao = Convert.ToString(DateTime.Now);
+        novoEmprestimo.ComentarioAlmoxarife = "";
 
         try
         {
         _context.emprestimos.Add(novoEmprestimo);
         _context.SaveChanges();
+            picker = "";
+            funcaoCaptada = "";
             DisplayAlert("Sucesso", "Emprestimo Solicitado", "Fechar");
             return;
         }
-        catch
-        {
-            DisplayAlert("Atenção", "Falha ao soicitar Emprestimo", "Fechar");
+        catch(Exception ex)
+        { 
+            DisplayAlert("Atenção", "Falha ao soicitar Emprestimo ", "Fechar");
             return;
         }
     }

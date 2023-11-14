@@ -7,12 +7,75 @@
         VerticalOptions="Center"
         HorizontalOptions="Center">
 
+        <!-- Adicionar Epi-->
         <Button 
-            IsVisible="True"
+     IsVisible="True"
+     x:Name="btnAdionarEpi"
+      Text="Adicionar Novo EPI"
+      VerticalOptions="Center" 
+      HorizontalOptions="Start"
+      Margin="16"
+      WidthRequest="200"
+      TextColor="Black"
+      Clicked="btnAdionarEpi_Clicked"/>
+
+        <VerticalStackLayout
+             IsVisible="False"
+          x:Name="tagAdicionarEpi"
+         HorizontalOptions="Center">
+
+
+            <Label
+             Margin="0, 10, 0, 0"
+              Text="Codigo do Epi"/>
+            <Entry
+             x:Name="txtCodigoNovoEpi"
+             Placeholder="Digite o Codigo do Epi"/>
+
+            <Label  
+             Margin="0, 10, 0, 0"
+             Text="Nome do Epi"/>
+            <Entry
+             Placeholder="Digite o nome do EPI"
+             x:Name="txtNomeEpiNovo"/>
+
+            <Label
+             Margin="0, 10, 0, 0"
+             Text="Descrição do Epi"/>
+            <Entry
+             Placeholder="Digite a Descrição do Epi"
+             x:Name="txtDescricaoEpiNovo"/>
+
+            <Label
+              Margin="0, 10, 0, 0"
+              Text="Categoria do Epi"/>
+            <Entry
+             Placeholder="Digite a Categoria do Epi"
+             x:Name="txtCategoriaEpiNovo"/>
+
+            <Label
+              Text="Quantidade de Epi's"/>
+            <Entry
+             Placeholder="Digite a Quantidade de Epi's"
+             x:Name="txtQuantidadeEpiNovo" />
+
+
+            <Button
+             Margin="0, 20, 0, 0"
+             x:Name="btnNovoEpi"
+             Text="Adicionar"
+             TextColor="Black"
+             Clicked="btnNovoEpi_Clicked"/>
+
+        </VerticalStackLayout>
+
+
+        <Button 
+            IsVisible="true"
             x:Name="btnBuscarEpi"
             Text="Buscar EPI"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
             Margin="16"
             TextColor="Black"
             WidthRequest="200"
@@ -20,137 +83,63 @@
             Clicked="btnBuscarEpi_Clicked"/>
 
         <VerticalStackLayout
-            IsVisible="False"
-            x:Name="tagBuscaEpi"
-            HorizontalOptions="Center"
-            Margin="16">
+                IsVisible="false"
+                x:Name="tagBuscaEpi"
+                HorizontalOptions="Center"
+                Margin="16">
+            <Label Text="Buscar EPI"
+                   HorizontalOptions="Center"
+                   TextTransform="Uppercase"
+                   FontAttributes="Bold"
+                   FontFamily="roboto"
+                   FontSize="Title"
+                   Opacity=".5"
+                   Margin="0,0,0,50"/>
 
             <Label
-            Text="Nome do EPI"/>
+                Text="Nome do EPI"
+                HorizontalOptions="Center"/>
             <Entry
                 Placeholder="Digite o nome do EPI"
                 x:Name="txtNomeEpiBusca"
-                BackgroundColor="GreenYellow"
                 Keyboard="Text"
                 WidthRequest="200"
-                ClearButtonVisibility="WhileEditing"/>
+                ClearButtonVisibility="Never"/>
             <Button
                 x:Name="btnProcurarEpiPorNome"
                 Text="Procurar"
                 Margin="16"
                 TextColor="Black"
+                WidthRequest="200"
                 Clicked="btnProcurarEpiPorNome_Clicked"/>
 
 
 
             <Label
-                Text="Digite o codigo do EPI"/>
+                Text="Digite o codigo do EPI"
+                HorizontalOptions="Center"
+                Margin="16"/>
             <Entry
                 Placeholder="Digite o codigo do EPI"
                 x:Name="txtCodigoEpiBusca"
-                BackgroundColor="GreenYellow"
                 Keyboard="Numeric"
                 WidthRequest="200"
-                ClearButtonVisibility="WhileEditing"/>
+                ClearButtonVisibility="Never"/>
             <Button
                 x:Name="btnProcurarEpiPorCodigo"
                 Text="Procurar"
                 Margin="16"
+                WidthRequest="200"
                 TextColor="Black"
                 Clicked="btnProcurarEpiPorCodigo_Clicked"/>
 
-            <VerticalStackLayout
-                x:Name="resultadoBusca"
-                IsVisible="false">
-                
-                <Label
-                    Text="Codigo"/>
-                <Label
-                    x:Name="lblCodigoBuscado"/>
-                
-                <Label
-                     Text="Nome"/>
-                <Label
-                    x:Name="lblNomeBuscado"/>
-                <Label
-                    Text="Decrição"/>
-                <Label
-                    x:Name="lblDescricaoBuscado"/>
-                <Label
-                    Text="Categoria"/>
-                <Label
-                     x:Name="lblCategoriaBuscado"/>
-                <Label
-                     Text="Quantidade Atual"/>
-                <Label
-                     x:Name="lblQdadeBuscado"/>
-
-
-            </VerticalStackLayout>
-
+            
         </VerticalStackLayout>
 
-        <!-- Adicionar Epi-->
-        <Button 
-            IsVisible="True"
-            x:Name="btnAdionarEpi"
-             Text="Adicionar Novo EPI"
-             VerticalOptions="Center" 
-             HorizontalOptions="Start"
-             Margin="16"
-             WidthRequest="200"
-             TextColor="Black"
-             Clicked="btnAdionarEpi_Clicked"/>
-
-        <VerticalStackLayout
-                    IsVisible="False"
-                 x:Name="tagAdicionarEpi"
-                HorizontalOptions="Center">
+        
 
 
-            <Label
-                    Margin="0, 10, 0, 0"
-                     Text="Codigo do Epi"/>
-            <Entry
-                    x:Name="txtCodigoNovoEpi"
-                    Placeholder="Digite o Codigo do Epi"/>
-
-            <Label  
-                    Margin="0, 10, 0, 0"
-                    Text="Nome do Epi"/>
-            <Entry
-                    Placeholder="Digite o nome do EPI"
-                    x:Name="txtNomeEpiNovo"/>
-
-            <Label
-                    Margin="0, 10, 0, 0"
-                    Text="Descrição do Epi"/>
-            <Entry
-                    Placeholder="Digite a Descrição do Epi"
-                    x:Name="txtDescricaoEpiNovo"/>
-
-            <Label
-                     Margin="0, 10, 0, 0"
-                     Text="Categoria do Epi"/>
-            <Entry
-                    Placeholder="Digite a Categoria do Epi"
-                    x:Name="txtCategoriaEpiNovo"/>
-
-            <Label
-                     Text="Quantidade de Epi's"/>
-            <Entry
-                    Placeholder="Digite a Quantidade de Epi's"
-                    x:Name="txtQuantidadeEpiNovo" />
-
-
-            <Button
-                    Margin="0, 20, 0, 0"
-                    x:Name="btnNovoEpi"
-                    Text="Adicionar"
-                    TextColor="Black"
-                    Clicked="btnNovoEpi_Clicked"/>
-
-        </VerticalStackLayout>
+       
 
             <Button 
             IsVisible="True"
@@ -228,7 +217,7 @@
 
         </VerticalStackLayout>
         <Button
-            IsVisible="true"
+            IsVisible="false"
             x:Name="btnCancelarBusca"
             Text="Cancelar"
             VerticalOptions="Center" 

@@ -71,22 +71,6 @@ public partial class LoginPage : ContentPage
         }
 
 
-    private void btnEntrarAdm_Clicked(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new AdministradorPage());
-    }
-
-
-
-    private void btnEntrarAlm_Clicked(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new AlmoxarifePage());
-    }
-
-    private void btnEntrar_Func_Clicked(object sender, EventArgs e)
-    {
-        
-    }
-
+   
 }
 

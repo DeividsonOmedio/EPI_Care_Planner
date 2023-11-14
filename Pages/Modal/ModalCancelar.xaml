@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epi_Care_Planner.Pages.Modal.ModalCancelar"
+             Title="ModalCancelar">
+    <StackLayout
+        VerticalOptions="Center">
+        <Label Text="Cancelar Solicitação" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+               Margin="50"
+                FontSize="Title"
+                TextTransform="Uppercase"
+                FontAttributes="Bold"/>
+        <VerticalStackLayout
+            Margin="16"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label Text="Comentario:"/>
+            <Entry
+                x:Name="txtComentario"
+                Placeholder="Escreva aqui o comentario"/>
+            <Button Text="Cancelar"
+                    x:Name="btnRecusar"
+                    Clicked="btnRecusar_Clicked"
+                     Margin="20"/>
+        </VerticalStackLayout>
+        <Button Text="Fechar Modal" Clicked="FecharModal_Clicked" WidthRequest="50"/>
+    </StackLayout>
+</ContentPage>

@@ -24,7 +24,7 @@
 
                 <Label Text="Codigo" />
                 <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center"/>
-                <Label Grid.Column="2" Text="Categoria" HorizontalOptions="Start" TranslationX="1"  FontSize="12" HorizontalTextAlignment="Center"/>
+                <Label Grid.Column="2" Text="Categoria" HorizontalOptions="Center"  FontSize="12" HorizontalTextAlignment="Center"/>
             </Grid>
 
 
@@ -37,6 +37,15 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate >
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Ver Detalhes"
+                                           x:Name="detalhesSwipe"
+                                            BackgroundColor="LightGreen"
+                                            Invoked="detalhesSwipe_Invoked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
                         <Grid 
                  >
                             <Grid.ColumnDefinitions>
@@ -56,7 +65,7 @@
                      Grid.Column="1"
                      BorderColor="Green"
                       CornerRadius="0">
-                            <Button  Text="{Binding Nome}"  x:Name="btnNome" TextColor="Black" Clicked="Button_Clicked"/>
+                                <Label  Text="{Binding Nome}"   TextColor="Black" />
                             </Frame>
                             <Frame 
                      Grid.Column="2"
@@ -65,7 +74,8 @@
                                 <Label Grid.Column="2" Text="{Binding Categoria}" TextColor="Black"/>
                             </Frame>
                         </Grid>
-                    </DataTemplate>
+                    </SwipeView>
+                </DataTemplate>
                 </CollectionView.ItemTemplate>
 
             </CollectionView>

@@ -5,8 +5,177 @@
              Title="DashboardPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="EPI's Emprestados"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+             Margin="50"
+              FontSize="Title"
+              TextTransform="Uppercase"
+              FontAttributes="Bold"
+             />
+
+
+
+        <Grid
+           Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="EPI" HorizontalOptions="Center"/>
+            <Label Grid.Column="1" Text="Data Emprestimo" HorizontalOptions="Center" />
+            <Label Grid.Column="2" Text="Data Devolução" HorizontalOptions="Center"/>
+        </Grid>
+
+
+        <CollectionView
+                    HorizontalScrollBarVisibility="Always"
+                    x:Name="ListaEpisEmprestado"
+                    Grid.Row="4" 
+                    Margin="0, 10, 0, 10"
+                    MaximumHeightRequest="400">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Frame
+                    BorderColor="Green"
+                    CornerRadius="0"
+                    >
+                            <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
+                        </Frame>
+                        <Frame 
+                    Grid.Column="1"
+                    BorderColor="Green"
+                     CornerRadius="0">
+                            <Label  Text="{Binding DataEmpretimo}"  TextColor="Black"/>
+                        </Frame>
+                        <Frame 
+                    Grid.Column="2"
+                    BorderColor="Green"
+                     CornerRadius="0">
+                            <Label Grid.Column="2" Text="{Binding DataPrevisaoDevolucao}" TextColor="Black"/>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
+        <Label 
+            Text="Solicitações de EPI's"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+             Margin="50"
+  FontSize="Title"
+  TextTransform="Uppercase"
+  FontAttributes="Bold"
+ />
+
+
+
+        <Grid
+           Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="EPI" HorizontalOptions="Center" FontSize="Micro"/>
+            <Label Grid.Column="1" Text="Data Solicitação" HorizontalOptions="Center" FontSize="Micro"/>
+            <Label Grid.Column="2" Text="Data Retirada" HorizontalOptions="Center" FontSize="Micro" />
+            <Label Grid.Column="3" Text="Confirmação" HorizontalOptions="Center" FontSize="Micro"/>
+        </Grid>
+
+
+        <CollectionView
+   
+    HorizontalScrollBarVisibility="Always"
+    
+    x:Name="ListaSolicitacaoEpis" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <VerticalStackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+
+
+                        <Frame
+                    BorderColor="DarkGreen"
+                    CornerRadius="0"
+                    >
+                            <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
+                        </Frame>
+                        <Frame 
+                    Grid.Column="1"
+                    BorderColor="DarkGreen"
+                     CornerRadius="0">
+                            <Label  Text="{Binding DataSolicitacao}"  TextColor="Black" FontSize="Micro"/>
+                        </Frame>
+                        <Frame 
+                            Grid.Column="2"
+                    BorderColor="DarkGreen"
+                     CornerRadius="0">
+                            <Label  Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black" FontSize="Micro"/>
+                        </Frame>
+                        <Frame 
+                    Grid.Column="3"
+                    BorderColor="DarkGreen"
+                     CornerRadius="0">
+                            <Label  Text="{Binding Status}" TextColor="Black" FontSize="Micro"/>
+                        </Frame>
+
+
+                            
+                        </Grid>
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Frame 
+                        
+                                BorderColor="DarkGreen"
+                                 CornerRadius="0"
+                                VerticalOptions="Start" 
+                                Padding="5">
+                                <VerticalStackLayout >
+                                <Label Text="Comentario:" HorizontalTextAlignment="Start" TextColor="Black" Padding="20,0,0,0" FontSize="Micro" VerticalTextAlignment="Start"/>
+                                <Label  Text="{Binding ComentarioFuncionario}" TextColor="Black" HorizontalTextAlignment="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
     </VerticalStackLayout>
 </ContentPage>

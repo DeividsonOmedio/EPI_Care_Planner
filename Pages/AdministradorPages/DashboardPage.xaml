@@ -8,7 +8,11 @@
             Text="EPI's Emprestados"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
-            Margin="16"/>
+            Margin="50"
+             FontSize="Title"
+             TextTransform="Uppercase"
+             FontAttributes="Bold"
+            />
 
 
 
@@ -17,23 +21,23 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
 
 
-            <Label Text="Ferramenta" />
-            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="End"/>
-            <Label Grid.Column="2" Text="Data Entrega" HorizontalOptions="Center" TranslationX="20"/>
+            <Label Text="Epi" HorizontalOptions="Center"/>
+            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"/>
+            <Label Grid.Column="2" Text="Data Emprestimo" HorizontalOptions="Center"/>
         </Grid>
 
-
+        <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhum emprestimo"/>
         <CollectionView
-   
-    HorizontalScrollBarVisibility="Always"
-    
-    x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400"
-    IsVisible="False">
+                    HorizontalScrollBarVisibility="Always"
+                    x:Name="ListaEpisBanco" 
+                    Grid.Row="4" 
+                    Margin="0, 10, 0, 10" 
+                    MaximumHeightRequest="400">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate >
@@ -46,22 +50,21 @@
 
 
                         <Frame
-                    BorderColor="Red"
-                    CornerRadius="0"
-                    >
-                            <Label Text="teste Nome" TextColor="Black" VerticalTextAlignment="Center"/>
+                            BorderColor="DarkGreen"
+                            CornerRadius="0">   
+                            <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
                         </Frame>
                         <Frame 
-                    Grid.Column="1"
-                    BorderColor="Red"
-                     CornerRadius="0">
-                            <Label  Text="teste Ferramenta"  TextColor="Black"/>
+                            Grid.Column="1"
+                            BorderColor="DarkGreen"
+                             CornerRadius="0">
+                            <Label  Text="{Binding Funcionario}"  TextColor="Black"/>
                         </Frame>
                         <Frame 
                     Grid.Column="2"
-                    BorderColor="Red"
+                    BorderColor="DarkGreen"
                      CornerRadius="0">
-                            <Label Grid.Column="2" Text="texte data" TextColor="Black"/>
+                            <Label Grid.Column="2" Text="{Binding DataEmprestimo}" TextColor="Black"/>
                         </Frame>
                     </Grid>
                 </DataTemplate>

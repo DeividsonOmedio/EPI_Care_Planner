@@ -3,26 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.FuncionarioPages.SolicitacaoPage"
              Title="Solicitacao">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" >
         <Label 
             Text="Solicitar EPI"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             FontAttributes="Bold"
-            TextTransform="Uppercase"/>
+            TextTransform="Uppercase"
+            Margin="50"
+            FontSize="Title"/>
         
         <Label
-            Text="Nome do EPI"/>
+            Text="Nome do EPI:"/>
         <Picker 
             x:Name="pickerEpi"
             Title="Selecione um EPI"
-            TextColor="Silver"
+            TextColor="White"
             BackgroundColor="Black"
+            ItemDisplayBinding="{Binding Nome}"
+            SelectedItem="{Binding Id}"
             SelectedIndexChanged="pickerEpi_SelectedIndexChanged">
             
         </Picker>
         <Label
-            Text="Para Quando"/>
+            Text="Para Quando:"/>
 
         <Picker 
          x:Name="pickerQuando"
@@ -38,26 +44,24 @@
         <Entry
             Placeholder="Digite Data/Hora"
             x:Name="txtAgendar"
-            BackgroundColor="GreenYellow"
             Keyboard="Text"
-            WidthRequest="200"
             ClearButtonVisibility="WhileEditing"
             IsVisible="false"/>
         <Label
-            Text="Comentario"/>
+            Text="Comentario:"/>
         <Entry
             Placeholder="Comente se achar necessário"
+            PlaceholderColor="DarkGrey"
             x:Name="txtcomentario"
-            BackgroundColor="GreenYellow"
             Keyboard="Text"
-            WidthRequest="200"
             ClearButtonVisibility="WhileEditing"/>
 
         <Button
             Text="Solicitar"
             x:Name="btnSolicitarEmprestimo"
             Clicked="btnSolicitarEmprestimo_Clicked"
-            Margin="16"
+            Margin="36"
+            WidthRequest="200"
             TextColor="Black"/>     
     </VerticalStackLayout>
 </ContentPage>

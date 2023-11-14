@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VIlg86Ln5sUY9hXAyeu+2VHE5ov+ybsFWlypC4PKkVuuhQch0394ud3WCs2Rvx8fYQe1aZY0EOkcBQDSD10JEA==",
+  "dgSpecHash": "EeAewG7EH03PzzRiZmoCNQ7gB/WoOLRSVCTJCKOLrFoJdFWtY0gJDtFQjcGQC0XY+KqVqaneTIpxlITAyVfXNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deividson\\Documents\\App.Net-Maui-Controle_EPI\\Epi_Care_Planner\\Epi_Care_Planner.csproj",
+  "projectFilePath": "C:\\Users\\deividson\\Documents\\Epi_Care_Planner\\Epi_Care_Planner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deividson\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.13\\microsoft.data.sqlite.core.7.0.13.nupkg.sha512",

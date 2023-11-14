@@ -13,13 +13,13 @@ namespace Epi_Care_Planner.Model
     {
         [Key]
         public int Id { get; set; }
-        [ForeignKey("epi")]
-        public Epi EpiId { get; set; }
-        [ForeignKey("usuario")]
-        public Usuario FuncionarioId { get; set; }
+        public string Epi { get; set; }
+        public string Funcionario { get; set; }
+        public string DataSolicitacao { get; set; }
         public string DataPrevisaoEmprestimo { get; set; }
         public string DataEmpretimo { get; set; }
         public string DataPrevisaoDevolucao { get; set; }
+        public string DataDevolucao { get; set; }
         public string Status { get; set; }
         public string ComentarioFuncionario { get; set; }
         public string ComentarioAlmoxarife { get; set; }

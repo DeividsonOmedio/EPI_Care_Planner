@@ -9,7 +9,7 @@ public partial class FuncionarioPage : TabbedPage
     {
         InitializeComponent();
 
-        var pagina1 = new DashboardPage()
+        var pagina1 = new DashboardPage(usuarioLogado)
         {
             Title = "Dashboard",
             IconImageSource = ""
@@ -20,7 +20,7 @@ public partial class FuncionarioPage : TabbedPage
             Title = "Solicitacao",
             IconImageSource = ""
         };
-        var pagina3 = new ListaEpiPage()
+        var pagina3 = new ListaEpiPage(usuarioLogado)
         {
             Title = "Lista Epi's",
             IconImageSource = ""

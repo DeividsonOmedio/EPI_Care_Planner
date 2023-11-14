@@ -14,14 +14,14 @@
 
         <Label
             x:Name="lblUser"
-            Text="E-mail"/>
+            Text="Usuario"/>
         <Entry
-            Placeholder="Digite seu e-mail"
+            Placeholder="Digite seu usuario"
             x:Name="txtUser"/>
 
         <Label
              x:Name="lblSenha"
-             Text="E-mail"/>
+             Text="Senha"/>
         <Entry
              Placeholder="Digite sua senha"
              x:Name="txtSenha"
@@ -33,25 +33,5 @@
             Clicked="btnEntrar_Clicked"
             Margin="16"/>
 
-        <Label
-            x:Name="result"
-            Text=""
-            Margin="16"/>
-
-        <Button
-             Text="EntrarAdm"
-             x:Name="btnEntrarAdm"
-             Clicked="btnEntrarAdm_Clicked"
-             Margin="16"/>
-        <Button
-             Text="EntrarAlm"
-             x:Name="btnEntrarAlm"
-             Clicked="btnEntrarAlm_Clicked"
-             Margin="16"/>
-        <Button
-             Text="EntrarFunc"
-             x:Name="btnEntrarFun"
-             Clicked="btnEntrar_Func_Clicked"
-             Margin="16"/>
     </StackLayout>
 </ContentPage>

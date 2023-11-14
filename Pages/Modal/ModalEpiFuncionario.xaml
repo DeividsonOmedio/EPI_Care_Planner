@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epi_Care_Planner.Pages.Modal.ModalEpiFuncionario"
+             Title="ModalEpiFuncionario">
+    <VerticalStackLayout
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"
+                        Margin="10">
+        <Label 
+            Text="EPI"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontAttributes="Bold"
+            TextTransform="Uppercase"
+            Margin="50"
+            FontSize="Title"/>
+
+        <Label Text="Código:" HorizontalOptions="Start"/>
+            <Label x:Name="txtCodigo" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10" Padding="10" BackgroundColor="#80808095"/>
+
+            <Label Text="Epi:" HorizontalOptions="Start"/>
+            <Label  x:Name="txtNome"  TextColor="White" HorizontalTextAlignment="Center" Margin="10" Padding="10" BackgroundColor="#80808095"/>
+
+            <Label Text="Descrição:" HorizontalOptions="Start"/>
+            <Label  x:Name="txtDescricao"  TextColor="White"  Margin="10" Padding="10" BackgroundColor="#80808095"/>
+
+            <Label Text="Categoria:" HorizontalOptions="Start"/>
+            <Label  x:Name="txtCategoria"  TextColor="White" HorizontalTextAlignment="Center" Margin="10" Padding="10" BackgroundColor="#80808095"/>
+
+            <Label Text="Quantidade  Atual:" HorizontalOptions="Start" />
+            <Label  x:Name="txtQuantidade" TextColor="White" HorizontalTextAlignment="Center" Margin="10" Padding="10" BackgroundColor="#80808095"/>
+
+        <Button Text="Solicitar" x:Name="btnSolicitarEpi" Clicked="btnSolicitarEpi_Clicked" WidthRequest="200" Margin="16"/>
+
+        <Button Text="Voltar" x:Name="btnvoltar" Clicked="btnvoltar_Clicked" WidthRequest="100"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
