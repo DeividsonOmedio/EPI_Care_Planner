@@ -23,15 +23,24 @@ public partial class ModalEditarEpi : ContentPage
     }
 private void btnConfirmarEpi_Clicked(object sender, EventArgs e)
     {
-        var result = _context.epis.FirstOrDefault(x => x.Id == epi.Id);
-        if (result == null)
+        epi.Codigo = txtCodigo.Text;
+        epi.Nome = txtNome.Text;
+        epi.Descricao = txtDescricao.Text;
+        epi.Categoria = txtCategoria.Text;
+        epi.QuantidadeAtual = Convert.ToInt32(txtQuantidade.Text);
+
+        try 
         {
-            DisplayAlert("Atenção", "error", "Fechar");
-            return;
-        }
-        _context.epis.Update(result);
+        _context.epis.Update(epi);
         _context.SaveChanges();
+        DisplayAlert("Sucesso", "Edição realizada", "Fechar");    
         Navigation.PopModalAsync();
+        }
+        catch
+        {
+            DisplayAlert("Atenção", "Error", "Fechar");
+                Navigation.PopModalAsync();
+        }
     }
 
     private void btnvoltar_Clicked(object sender, EventArgs e)

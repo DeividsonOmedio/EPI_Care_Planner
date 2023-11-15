@@ -52,7 +52,10 @@ public partial class SolicitacaoPage : ContentPage
         }
         if (picker == "Agendar")
             txtAgendar.IsVisible = true;
-        
+        else
+        {
+            txtAgendar.IsVisible = false;
+        }
             
     }
     
@@ -81,11 +84,16 @@ public partial class SolicitacaoPage : ContentPage
         _context.emprestimos.Add(novoEmprestimo);
         _context.SaveChanges();
             picker = "";
+            pickerEpi.SelectedItem = null;
+            pickerQuando.SelectedItem = null;
             funcaoCaptada = "";
+            txtAgendar.Text = "";
+            txtAgendar.IsVisible = false;
+            txtcomentario.Text = "";
             DisplayAlert("Sucesso", "Emprestimo Solicitado", "Fechar");
             return;
         }
-        catch(Exception ex)
+        catch(Exception)
         { 
             DisplayAlert("Atenção", "Falha ao soicitar Emprestimo ", "Fechar");
             Navigation.PushModalAsync(new SolicitacaoPage(UsuarioLogado));

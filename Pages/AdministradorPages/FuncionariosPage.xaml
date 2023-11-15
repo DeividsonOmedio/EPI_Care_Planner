@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AdministradorPages.FuncionariosPage"
              Title="FuncionariosPage">
-    <VerticalStackLayout
+
+
+
+            <VerticalStackLayout
         VerticalOptions="Center"
         HorizontalOptions="Center">
         <Button
@@ -123,13 +126,13 @@
             <Label Grid.Column="2" Text="Função" HorizontalOptions="Center"/>
         </Grid>
 
-
+        
         <CollectionView
    
             HorizontalScrollBarVisibility="Always"
     
-            x:Name="ListaDosFunc" Grid.Row="4" Margin="2, 10, 2, 10" MaximumHeightRequest="400">
-
+            x:Name="ListaDosFunc" Grid.Row="4" Margin="2, 10, 2, 10" MaximumHeightRequest="500">
+            
             <CollectionView.ItemTemplate>
                 <DataTemplate >
                     <Grid 

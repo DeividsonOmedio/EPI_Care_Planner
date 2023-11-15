@@ -31,7 +31,7 @@
                         <Entry  x:Name="txtCategoria"  TextColor="White" HorizontalTextAlignment="Center"/>
 
                         <Label Text="Quantidade  Atual:" HorizontalOptions="Start"/>
-                        <Entry  x:Name="txtQuantidade" TextColor="White" HorizontalTextAlignment="Center"/>
+                        <Entry x:Name="txtQuantidade" TextColor="White" HorizontalTextAlignment="Center"/>
 
                          <Button Text="Confirmar" x:Name="btnConfirmarEpi" Clicked="btnConfirmarEpi_Clicked" WidthRequest="200" Margin="16"/>
 

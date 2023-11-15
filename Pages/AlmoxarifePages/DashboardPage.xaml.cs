@@ -11,7 +11,17 @@ public partial class DashboardPage : ContentPage
 	{
 		InitializeComponent();
         CarregarSolicitacoes();
-	}
+
+        // Adicione o evento de refresh ao RefreshView
+        refreshView.Refreshing += (sender, e) =>
+        {
+            // Lógica de recarregamento
+            CarregarSolicitacoes();
+
+            // Após a conclusão da operação de recarregamento, pare o indicador de refresh
+            refreshView.IsRefreshing = false;
+        };
+    }
 
     public void CarregarSolicitacoes()
     {
@@ -23,15 +33,19 @@ public partial class DashboardPage : ContentPage
             
         }
         ListaSolicitacoes.ItemsSource = lista;
-        lblnaoemp.IsVisible = false;
 
         var listaConfirmada = _context.emprestimos.Where(x => x.Status.ToLower() == "confirmado").ToList();
         if (listaConfirmada.Count == 0)
         {
-            lblnaoemp.IsVisible = true;
+            lblnaoconfir.IsVisible = true;
             gridConfirm.IsVisible = false;
         }
-        ListaConfirmadas.ItemsSource = listaConfirmada;
+        else
+        {
+            lblnaoconfir.IsVisible = false;
+            ListaConfirmadas.ItemsSource = listaConfirmada;
+
+        }
 
     }
 
@@ -49,7 +63,7 @@ public partial class DashboardPage : ContentPage
         int idDoItem = item.Id; // Substitua "Id" pelo nome da propriedade que contém o ID
 
         Navigation.PushModalAsync(new ModalComentarioConfirmar(idDoItem));
-        CarregarSolicitacoes();
+        Navigation.PushAsync(new AlmoxarifePage());
 
     }
 

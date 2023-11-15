@@ -3,90 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.EmprestadosPage"
              Title="EmprestadosPage">
-    <VerticalStackLayout>
-        <Label 
+
+    <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}" Command="{Binding RefreshCommand}">
+
+        <ScrollView>
+            <VerticalStackLayout
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="Center">
+                <Label 
             Text="EPI's Emprestados"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
-            Margin="50"
+            Margin="50, 100"
             FontSize="Title"
             TextTransform="Uppercase"
             FontAttributes="Bold"
-            Opacity=".6"/>
+            />
 
-        <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
+                <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
 
 
-        <Grid
+                <Grid
             x:Name="gridEmp"
            Margin="0, 50, 10, 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
 
 
-            <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"/>
-            <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"/>
-            <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"/>
-        </Grid>
+                    <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"/>
+                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"/>
+                    <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"/>
+                </Grid>
 
 
-        <CollectionView
+                <CollectionView
    
     HorizontalScrollBarVisibility="Always"
     
     x:Name="ListaEpisEmprestados" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400">
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate >
-                    <SwipeView>
-                        <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Devolução"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate >
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Devolução"
                                            x:Name="swpDevolucao"
                                              BackgroundColor="LightGreen"
                                              Invoked="swpDevolucao_Invoked" />
 
-                            </SwipeItems>
-                        </SwipeView.RightItems>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
 
-                            <Frame
+                                    <Frame
                     BorderColor="Black"
                     CornerRadius="0"
                     >
-                                <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
-                            </Frame>
-                            <Frame 
+                                        <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
+                                    </Frame>
+                                    <Frame 
                     Grid.Column="1"
                     BorderColor="Black"
                      CornerRadius="0">
-                                <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Micro"/>
-                            </Frame>
-                            <Frame 
+                                        <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Micro"/>
+                                    </Frame>
+                                    <Frame 
                     Grid.Column="2"
                     BorderColor="Black"
                      CornerRadius="0">
-                                <Label Grid.Column="2" Text="{Binding DataEmpretimo}" TextColor="Black" FontSize="Micro"/>
-                            </Frame>
-                           
-
-                        </Grid>
-                    </SwipeView>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
+                                        <Label Grid.Column="2" Text="{Binding DataEmpretimo}" TextColor="Black" FontSize="Micro"/>
+                                    </Frame>
 
 
-    </VerticalStackLayout>
+                                </Grid>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </RefreshView>
 </ContentPage>

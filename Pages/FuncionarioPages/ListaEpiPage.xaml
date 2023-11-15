@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.FuncionarioPages.ListaEpiPage"
              Title="ListaEpiPage">
+    <ScrollView>
     <VerticalStackLayout>
         <Label 
             Text="Lista de EPI's"
@@ -37,7 +38,7 @@
     
      HorizontalScrollBarVisibility="Always"
      
-     x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400"
+     x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10"
      IsVisible="true">
 
                 <CollectionView.ItemTemplate>
@@ -86,4 +87,5 @@
             </CollectionView>
 
         </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

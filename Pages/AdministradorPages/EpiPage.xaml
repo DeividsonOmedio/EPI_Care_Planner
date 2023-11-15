@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AdministradorPages.EpiPage"
              Title="EpiPage">
-    <VerticalStackLayout
+
+
+            <VerticalStackLayout
         VerticalOptions="Center"
         HorizontalOptions="Center">
 

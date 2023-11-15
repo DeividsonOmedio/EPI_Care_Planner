@@ -13,6 +13,9 @@ public partial class EpiPage : ContentPage
     {
         InitializeComponent();
         Inicializar();
+
+        // Adicione o evento de refresh ao RefreshView
+       
     }
 
    
@@ -63,11 +66,15 @@ public partial class EpiPage : ContentPage
 
     private void btnListarEpis_Clicked(object sender, EventArgs e)
     {
-       
-            List<Epi> listaEpi = _context.epis.ToList();
-            ListaEpisBanco.ItemsSource = listaEpi;
-            ListaEpisBanco.IsVisible = true;
-        
+
+        carregarLista();
+    }
+    public void carregarLista()
+    {
+        List<Epi> listaEpi = _context.epis.ToList();
+        ListaEpisBanco.ItemsSource = listaEpi;
+        ListaEpisBanco.IsVisible = true;
+
 
 
         btnBuscarEpi.IsVisible = false;
@@ -130,7 +137,7 @@ public partial class EpiPage : ContentPage
     {
         SwipeItem swipeItem = (SwipeItem)sender;
         Epi item = (Epi)swipeItem.BindingContext;
-        Navigation.PushModalAsync(new ModalEpi(item));
+        Navigation.PushAsync(new ModalEpi(item));
     }
 
     private void Inicializar()
@@ -169,7 +176,7 @@ public partial class EpiPage : ContentPage
                 Epi auricular = new Epi();
                 auricular.Codigo = "0240";
                 auricular.Nome = "Protetor auricular";
-                auricular.Descricao = "Ruídos acima de 85 decibéis(dB) são considerados prejudiciais para a saúde auditiva. Por isso, exigem tempo de exposição controlado. Al�m disso, a NR 15 determina que acima destes n�veis considerados aceitáveis, o empregador precisa adotar medidas para a segurança do colaborador.";
+                auricular.Descricao = "Ruídos acima de 85 decibéis(dB) são considerados prejudiciais para a saúde auditiva. Por isso, exigem tempo de exposição controlado. Al�m disso, a NR 15 determina que acima destes níveis considerados aceitáveis, o empregador precisa adotar medidas para a segurança do colaborador.";
                 auricular.Categoria = "Geral; solda";
                 auricular.QuantidadeTotal = 100;
                 auricular.QuantidadeAtual = 100;
@@ -177,7 +184,7 @@ public partial class EpiPage : ContentPage
                 Epi oculos = new Epi();
                 oculos.Codigo = "0270";
                 oculos.Nome = "Óculos de proteção";
-                oculos.Descricao = "Protegem a sa�de dos olhos no ambiente de trabalho. Alguns dos principais riscos são as fagulhas da área de serralheria e solda, calor, poeira, micropartículas de impacto, agentes qu�micos ou biológicos, entre outros.";
+                oculos.Descricao = "Protegem a saúde dos olhos no ambiente de trabalho. Alguns dos principais riscos são as fagulhas da área de serralheria e solda, calor, poeira, micropartículas de impacto, agentes qu�micos ou biológicos, entre outros.";
                 oculos.Categoria = "Geral";
                 oculos.QuantidadeTotal = 100;
                 oculos.QuantidadeAtual = 100;
@@ -218,8 +225,8 @@ public partial class EpiPage : ContentPage
 
                 Epi OculosSoldador = new Epi();
                 OculosSoldador.Codigo = "0428";
-                OculosSoldador.Nome = "Capacete";
-                OculosSoldador.Descricao = "O trabalhador precisa usar óculos com proteção UV e juntamente com as m�scaras de solda, podemos considerar ambos como um dos principais EPI's para soldador, afinal o risco aos olhos do é EMINENTE, seja por conta da exposição, radiação e luminosidade intensa ou por conta da projeção de particulas VOLANTES que possam entrar em contato com os olhos, resultando em danos irreversíveis.";
+                OculosSoldador.Nome = "Capacete de Solda";
+                OculosSoldador.Descricao = "O trabalhador precisa usar óculos com proteção UV e juntamente com as máscaras de solda, podemos considerar ambos como um dos principais EPI's para soldador, afinal o risco aos olhos do é EMINENTE, seja por conta da exposição, radiação e luminosidade intensa ou por conta da projeção de particulas VOLANTES que possam entrar em contato com os olhos, resultando em danos irreversíveis.";
                 OculosSoldador.Categoria = "Solda";
                 OculosSoldador.QuantidadeTotal = 50;
                 OculosSoldador.QuantidadeAtual = 50;

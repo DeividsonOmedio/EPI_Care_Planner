@@ -10,7 +10,17 @@ public partial class EmprestadosPage : ContentPage
 	{
 		InitializeComponent();
 		CarregarEmprestados();
-	}
+
+        // Adicione o evento de refresh ao RefreshView
+        refreshView.Refreshing += (sender, e) =>
+        {
+            // Lógica de recarregamento
+            CarregarEmprestados();
+
+            // Após a conclusão da operação de recarregamento, pare o indicador de refresh
+            refreshView.IsRefreshing = false;
+        };
+    }
 	public void CarregarEmprestados()
 	{
         var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "emprestado").ToList();
@@ -19,7 +29,10 @@ public partial class EmprestadosPage : ContentPage
             lblnaoEmp.IsVisible = true;
             gridEmp.IsVisible = false;
         }
+        else
+        {
         ListaEpisEmprestados.ItemsSource = lista;
+        }
     }
 
     private void swpDevolucao_Invoked(object sender, EventArgs e)

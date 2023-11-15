@@ -11,7 +11,9 @@ public partial class FuncionariosPage : ContentPage
     public FuncionariosPage()
 	{
 		InitializeComponent();
+        // Adicione o evento de refresh ao RefreshView
         
+
     }
     private void btnRegistrarFuncionarioNovo_Clicked(object sender, EventArgs e)
     {
@@ -54,6 +56,11 @@ public partial class FuncionariosPage : ContentPage
 
     private void btnListar_Func_Clicked(object sender, EventArgs e)
     {
+        carregarFuncionarios();
+
+    }
+        public void carregarFuncionarios()
+    {
         btnAddFunc.IsVisible = false;
         btnListarFunc.IsVisible = false;
         tagListarFuncionarios.IsVisible = true;
@@ -61,7 +68,6 @@ public partial class FuncionariosPage : ContentPage
 
         List<Usuario> listaUsuario = _context.users.ToList();
         ListaDosFunc.ItemsSource = listaUsuario;
-
     }
 
     private void btnAddAlm_Clicked(object sender, EventArgs e)

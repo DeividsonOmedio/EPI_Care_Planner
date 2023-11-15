@@ -128,7 +128,6 @@
 
         </VerticalStackLayout>
 
-       
         <Button 
             IsVisible="True"
             x:Name="btnListarEpis"
@@ -140,7 +139,7 @@
             WidthRequest="200"
             Clicked="btnListarEpis_Clicked"/>
 
-        <VerticalStackLayout
+        <VerticalStackLayout 
                 IsVisible="false"
              x:Name="tagListarEpi">
 
@@ -163,9 +162,9 @@
 
             <CollectionView
            
-            HorizontalScrollBarVisibility="Always"
-            
-            x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10" MaximumHeightRequest="400"
+            HorizontalScrollBarVisibility="Always" 
+            HeightRequest="400"
+            x:Name="ListaEpisBanco" Grid.Row="4" Margin="0, 10, 0, 10" 
             IsVisible="False">
 
                 <CollectionView.ItemTemplate>
@@ -214,6 +213,7 @@
             </CollectionView>
 
         </VerticalStackLayout>
+
         <Button
             IsVisible="false"
             x:Name="btnCancelarBusca"
@@ -221,7 +221,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             Margin="16"
-            Opacity=".7"
+            Opacity=".9"
             TextColor="Black"
             Clicked="btnCancelarBusca_Clicked"/>
     </VerticalStackLayout>

@@ -14,6 +14,16 @@ public partial class DashboardPage : ContentPage
     {
         UsuarioLogado = usuarioLogado;
         InitializeComponent();
+        // Adicione o evento de refresh ao RefreshView
+        refreshView.Refreshing += (sender, e) =>
+        {
+            // Lógica de recarregamento
+            CarregarSolicitacoes();
+            CarregarEmprestados();
+
+            // Após a conclusão da operação de recarregamento, pare o indicador de refresh
+            refreshView.IsRefreshing = false;
+        };
         CarregarSolicitacoes();
         CarregarEmprestados();
         CarregarSolicitacoesComand = new Command(() =>

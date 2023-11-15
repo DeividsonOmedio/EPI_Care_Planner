@@ -9,7 +9,16 @@ public partial class DashboardPage : ContentPage
 	{
 		InitializeComponent();
 		CarregarLista();
-	}
+        // Adicione o evento de refresh ao RefreshView
+        refreshView.Refreshing += (sender, e) =>
+        {
+            // Lógica de recarregamento
+            CarregarLista();
+
+            // Após a conclusão da operação de recarregamento, pare o indicador de refresh
+            refreshView.IsRefreshing = false;
+        };
+    }
 		public void CarregarLista()
 	{
 		var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "emprestado").ToList();
