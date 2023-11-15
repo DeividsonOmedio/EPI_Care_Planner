@@ -24,7 +24,7 @@ public partial class ModalEpiFuncionario : ContentPage
     }
     private void btnSolicitarEpi_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new SolicitacaoPage(usuario));
+        Navigation.PushModalAsync(new SolicitacaoPage(usuario));
     }
     private void btnvoltar_Clicked(object sender, EventArgs e)
     {

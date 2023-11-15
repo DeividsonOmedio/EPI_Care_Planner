@@ -4,6 +4,7 @@
              x:Class="Epi_Care_Planner.Pages.Modal.ModalComentarioConfirmar"
              Title="ModalComentarioConfirmar">
     <StackLayout
+        
         VerticalOptions="CenterAndExpand">
         <Label   Text="Confirmar Solicitação" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
                  Margin="50"
@@ -23,6 +24,6 @@
                     Clicked="btnConfirmar_Clicked"
                      Margin="20"/>
         </VerticalStackLayout>
-        <Button Text="Fechar Modal" Clicked="FecharModal_Clicked" WidthRequest="50"/>
+        <Button Text="Fechar Modal" Clicked="FecharModal_Clicked" WidthRequest="100"/>
     </StackLayout> 
 </ContentPage>

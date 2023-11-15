@@ -7,7 +7,12 @@
         <Label 
             Text="Lista de EPI's"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+             Margin="50"
+              FontSize="Title"
+              TextTransform="Uppercase"
+              FontAttributes="Bold"
+             />
 
        
 
@@ -56,20 +61,20 @@
 
 
                             <Frame
-                     BorderColor="Green"
+                     BorderColor="Black"
                      CornerRadius="0"
                      >
                                 <Label Text="{Binding Codigo}" TextColor="Black" />
                             </Frame>
                             <Frame 
                      Grid.Column="1"
-                     BorderColor="Green"
+                     BorderColor="Black"
                       CornerRadius="0">
                                 <Label  Text="{Binding Nome}"   TextColor="Black" />
                             </Frame>
                             <Frame 
                      Grid.Column="2"
-                     BorderColor="Green"
+                     BorderColor="Black"
                       CornerRadius="0">
                                 <Label Grid.Column="2" Text="{Binding Categoria}" TextColor="Black"/>
                             </Frame>

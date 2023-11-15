@@ -1,5 +1,6 @@
 ﻿using Epi_Care_Planner.Context;
 using Epi_Care_Planner.Model;
+using Epi_Care_Planner.Pages.Modal;
 using Microsoft.EntityFrameworkCore;
 
 namespace Epi_Care_Planner.Pages.AdministradorPages;
@@ -84,8 +85,8 @@ public partial class EpiPage : ContentPage
         var result = _context.epis.FirstOrDefault(x => x.Nome.Contains(nomeBusca));
         if(result != null)
         {
-            
-            tagBuscaEpi.IsVisible = false;
+
+            Navigation.PushModalAsync(new ModalEpi(result));
         }
         else
         {
@@ -103,8 +104,8 @@ public partial class EpiPage : ContentPage
         var result = _context.epis.FirstOrDefault(x => x.Codigo == codeBusca);
         if (result != null)
         {
-           
-            tagBuscaEpi.IsVisible = false;
+            Navigation.PushModalAsync(new ModalEpi(result));
+
         }
         else
         {
@@ -125,6 +126,13 @@ public partial class EpiPage : ContentPage
         ListaEpisBanco.IsVisible = false;
     }
 
+    private void detalhesSwipe_Invoked(object sender, EventArgs e)
+    {
+        SwipeItem swipeItem = (SwipeItem)sender;
+        Epi item = (Epi)swipeItem.BindingContext;
+        Navigation.PushModalAsync(new ModalEpi(item));
+    }
+
     private void Inicializar()
     {
         
@@ -137,7 +145,7 @@ public partial class EpiPage : ContentPage
                 Epi capacete = new Epi();
                 capacete.Codigo = "0230";
                 capacete.Nome = "Capacete";
-                capacete.Descricao = "Protege, principalmente, a cabe�a e pescoço e tamb�m os ombros contra os choques elétricos, perfurações e impactos.";
+                capacete.Descricao = "Protege, principalmente, a cabeça e pescoço e também os ombros contra os choques elétricos, perfurações e impactos.";
                 capacete.Categoria = "Geral";
                 capacete.QuantidadeTotal = 100;
                 capacete.QuantidadeAtual = 100;
@@ -161,7 +169,7 @@ public partial class EpiPage : ContentPage
                 Epi auricular = new Epi();
                 auricular.Codigo = "0240";
                 auricular.Nome = "Protetor auricular";
-                auricular.Descricao = "Ruídos acima de 85 decibéis (dB) s�o considerados prejudiciais para a saúde auditiva. Por isso, exigem tempo de exposição controlado. Al�m disso, a NR 15 determina que acima destes n�veis considerados aceitáveis, o empregador precisa adotar medidas para a segurança do colaborador.";
+                auricular.Descricao = "Ruídos acima de 85 decibéis(dB) são considerados prejudiciais para a saúde auditiva. Por isso, exigem tempo de exposição controlado. Al�m disso, a NR 15 determina que acima destes n�veis considerados aceitáveis, o empregador precisa adotar medidas para a segurança do colaborador.";
                 auricular.Categoria = "Geral; solda";
                 auricular.QuantidadeTotal = 100;
                 auricular.QuantidadeAtual = 100;
@@ -169,14 +177,14 @@ public partial class EpiPage : ContentPage
                 Epi oculos = new Epi();
                 oculos.Codigo = "0270";
                 oculos.Nome = "Óculos de proteção";
-                oculos.Descricao = "Protegem a sa�de dos olhos no ambiente de trabalho. Alguns dos principais riscos são as fagulhas da �rea de serralheria e solda, calor, poeira, micropartículas de impacto, agentes qu�micos ou biológicos, entre outros.";
+                oculos.Descricao = "Protegem a sa�de dos olhos no ambiente de trabalho. Alguns dos principais riscos são as fagulhas da área de serralheria e solda, calor, poeira, micropartículas de impacto, agentes qu�micos ou biológicos, entre outros.";
                 oculos.Categoria = "Geral";
                 oculos.QuantidadeTotal = 100;
                 oculos.QuantidadeAtual = 100;
 
                 Epi Mascara = new Epi();
                 Mascara.Codigo = "0284";
-                Mascara.Nome = "Máscaras de prote��o";
+                Mascara.Nome = "Máscaras de proteção";
                 Mascara.Descricao = "Protege contra riscos biológicos ou químicos, calor, fumaça e frio, entre outros.";
                 Mascara.Categoria = "Geral";
                 Mascara.QuantidadeTotal = 100;

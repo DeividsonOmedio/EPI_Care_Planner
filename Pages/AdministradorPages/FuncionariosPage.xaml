@@ -27,13 +27,13 @@
             Text="Adicionar Funcionario"
             TextTransform="Uppercase"
             HorizontalTextAlignment="Center"
-            
+            FontAttributes="Bold"
             FontSize="Title"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
-            Opacity="0.3"
+            Opacity="0.9"
             Margin="56"
-            TextColor="Green"
+            TextColor="White"
             Padding="20"
             />
 
@@ -142,20 +142,20 @@
 
 
                         <Frame
-                    BorderColor="Green"
+                    BorderColor="Black"
                     CornerRadius="0"
                     >
                             <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Small"/>
                         </Frame>
                         <Frame 
                     Grid.Column="1"
-                    BorderColor="Green"
+                    BorderColor="Black"
                      CornerRadius="0">
                             <Label  Text="{Binding Name}"  TextColor="Black"/>
                         </Frame>
                         <Frame 
                     Grid.Column="2"
-                    BorderColor="Green"
+                    BorderColor="Black"
                      CornerRadius="0">
                             <Label Grid.Column="2" Text="{Binding Funcao}" TextColor="Black"/>
                         </Frame>

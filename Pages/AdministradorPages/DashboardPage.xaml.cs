@@ -13,10 +13,12 @@ public partial class DashboardPage : ContentPage
 		public void CarregarLista()
 	{
 		var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "emprestado").ToList();
-		if (lista[0].Epi == "")
+		if (lista.Count == 0)
 		{
 			lblnaoemp.IsVisible = true;
-		}
+            gridHeader.IsVisible = false;
+
+        }
 		else
 		{
             lblnaoemp.IsVisible = false;

@@ -22,7 +22,7 @@ public partial class ModalEpi : ContentPage
 
     private void btnEditarEpi_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new ModalEditarEpi(epi));
+        Navigation.PopModalAsync();
     }
 
     private void btnvoltar_Clicked(object sender, EventArgs e)

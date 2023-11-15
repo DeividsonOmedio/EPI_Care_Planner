@@ -16,7 +16,12 @@
 
 
 
+
+        <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhuma solicitação" HorizontalOptions="Center" Margin="16"/>
+
+        
         <Grid
+            x:Name="gridsolicitacoes"
            Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -65,27 +70,27 @@
 
 
                             <Frame
-                                BorderColor="DarkGreen"
+                                BorderColor="Black"
                                 CornerRadius="0"
                                 >
                                 <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
                             </Frame>
                             <Frame 
                                 Grid.Column="1"
-                                BorderColor="DarkGreen"
+                                BorderColor="Black"
                                  CornerRadius="0">
                                 <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Small"/>
                             </Frame>
                             <Frame 
                                 Grid.Column="2"
-                                BorderColor="DarkGreen"
+                                BorderColor="Black"
                                  CornerRadius="0">
                                 <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black" FontSize="Micro"/>
                             </Frame>
                             
                             <Frame 
                                 Grid.Column="3"
-                                BorderColor="DarkGreen"
+                                BorderColor="Black"
                                  CornerRadius="0">
                                 <Label  Text="{Binding ComentarioFuncionario}" TextColor="Black" FontSize="Micro"/>
                             </Frame>
@@ -107,7 +112,10 @@
                 TextTransform="Uppercase"
                 FontAttributes="Bold"/>
 
+        <Label x:Name="lblnaoconfir" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center" Margin="16"/>
+
         <Grid
+            x:Name="gridConfirm"
    Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -158,20 +166,20 @@
 
 
                             <Frame
-                          BorderColor="DarkGreen"
+                          BorderColor="Black"
                           CornerRadius="0"
                           >
                                 <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
                             </Frame>
                             <Frame 
                           Grid.Column="1"
-                          BorderColor="DarkGreen"
+                          BorderColor="Black"
                            CornerRadius="0">
                                 <Label  Text="{Binding Funcionario}"  TextColor="Black"/>
                             </Frame>
                             <Frame 
                           Grid.Column="2"
-                          BorderColor="DarkGreen"
+                          BorderColor="Black"
                            CornerRadius="0">
                                 <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black"/>
                             </Frame>
@@ -187,7 +195,7 @@
                                 <Label Text="Comentario"/>
                                 <Frame 
                                    
-                                BorderColor="DarkGreen"
+                                BorderColor="Black"
                                  CornerRadius="0"
                                     Padding="10">
                                     <VerticalStackLayout>

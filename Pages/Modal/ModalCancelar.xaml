@@ -23,6 +23,6 @@
                     Clicked="btnRecusar_Clicked"
                      Margin="20"/>
         </VerticalStackLayout>
-        <Button Text="Fechar Modal" Clicked="FecharModal_Clicked" WidthRequest="50"/>
+        <Button Text="Fechar Modal" Clicked="FecharModal_Clicked" WidthRequest="100"/>
     </StackLayout>
 </ContentPage>

@@ -25,7 +25,7 @@ public partial class ModalCancelar : ContentPage
             _context.SaveChanges();
             DisplayAlert("", "Solicitação Cancelada", "Fechar");
             Navigation.PopModalAsync();
-            Navigation.PushAsync(new AlmoxarifePage());
+            
 
         }
         catch

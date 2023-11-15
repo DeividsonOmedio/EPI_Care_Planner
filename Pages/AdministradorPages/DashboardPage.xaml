@@ -17,6 +17,7 @@
 
 
         <Grid
+            x:Name="gridHeader"
            Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -31,7 +32,7 @@
             <Label Grid.Column="2" Text="Data Emprestimo" HorizontalOptions="Center"/>
         </Grid>
 
-        <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhum emprestimo"/>
+        <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
         <CollectionView
                     HorizontalScrollBarVisibility="Always"
                     x:Name="ListaEpisBanco" 
@@ -50,21 +51,21 @@
 
 
                         <Frame
-                            BorderColor="DarkGreen"
+                            BorderColor="Black"
                             CornerRadius="0">   
                             <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
                         </Frame>
                         <Frame 
                             Grid.Column="1"
-                            BorderColor="DarkGreen"
+                            BorderColor="Black"
                              CornerRadius="0">
                             <Label  Text="{Binding Funcionario}"  TextColor="Black"/>
                         </Frame>
                         <Frame 
                     Grid.Column="2"
-                    BorderColor="DarkGreen"
+                    BorderColor="Black"
                      CornerRadius="0">
-                            <Label Grid.Column="2" Text="{Binding DataEmprestimo}" TextColor="Black"/>
+                            <Label Grid.Column="2" Text="{Binding DataEmpretimo}" TextColor="Black"/>
                         </Frame>
                     </Grid>
                 </DataTemplate>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.FuncionarioPages.SolicitacaoPage"
-             Title="Solicitacao">
+             Title="SolFuncionarioicitacao">
     <VerticalStackLayout
                          VerticalOptions="Center" 
                          HorizontalOptions="Center" >

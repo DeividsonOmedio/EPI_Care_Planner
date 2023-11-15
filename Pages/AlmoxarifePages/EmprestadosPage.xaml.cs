@@ -14,10 +14,10 @@ public partial class EmprestadosPage : ContentPage
 	public void CarregarEmprestados()
 	{
         var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "emprestado").ToList();
-        if (lista == null)
+        if (lista.Count == 0)
         {
-            DisplayAlert("Resposta", "Não ha novas solicitações no momento", "Fechar");
-            return;
+            lblnaoEmp.IsVisible = true;
+            gridEmp.IsVisible = false;
         }
         ListaEpisEmprestados.ItemsSource = lista;
     }
@@ -34,6 +34,6 @@ public partial class EmprestadosPage : ContentPage
         _context.epis.Update(resultEpi);
         _context.SaveChanges();
         DisplayAlert("Sucesso", "Devolução Confirmada", "Fechar");
-        Navigation.PushAsync(new AlmoxarifePage());
+        (Application.Current.MainPage as NavigationPage)?.Navigation?.PopToRootAsync();
     }
 }

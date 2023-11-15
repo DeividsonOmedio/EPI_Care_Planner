@@ -189,20 +189,20 @@
 
 
                                 <Frame
-                            BorderColor="Green"
+                            BorderColor="Black"
                             CornerRadius="0"
                             >
                                     <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center"/>
                                 </Frame>
                                 <Frame 
                             Grid.Column="1"
-                            BorderColor="Green"
+                            BorderColor="Black"
                              CornerRadius="0">
                                     <Label  Text="{Binding Nome}"  TextColor="Black"/>
                                 </Frame>
                                 <Frame 
                             Grid.Column="2"
-                            BorderColor="Green"
+                            BorderColor="Black"
                              CornerRadius="0">
                                     <Label Grid.Column="2" Text="{Binding QuantidadeAtual}" TextColor="Black"/>
                                 </Frame>

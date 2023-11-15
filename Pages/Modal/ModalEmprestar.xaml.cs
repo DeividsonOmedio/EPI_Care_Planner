@@ -19,7 +19,7 @@ public partial class ModalEmprestar : ContentPage
         {
             var result = _context.emprestimos.FirstOrDefault(x => x.Id == IdEmpretimo);
             result.Status = "Emprestado";
-            result.DataEmpretimo = DateTime.Now.ToString();
+            result.DataEmpretimo = Convert.ToString(DateTime.Now);
             result.ComentarioAlmoxarife = comentarioFeito;
             var resultEpi = _context.epis.FirstOrDefault(x => x.Nome == result.Epi);
             resultEpi.QuantidadeAtual--;
@@ -28,7 +28,6 @@ public partial class ModalEmprestar : ContentPage
             _context.SaveChanges();
             DisplayAlert("Sucesso", "Emprestimo Confirmado", "Fechar");
             Navigation.PopModalAsync();
-            Navigation.PushAsync(new AlmoxarifePage());
 
         }
         catch

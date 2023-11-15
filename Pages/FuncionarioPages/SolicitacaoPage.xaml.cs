@@ -88,7 +88,8 @@ public partial class SolicitacaoPage : ContentPage
         catch(Exception ex)
         { 
             DisplayAlert("Atenção", "Falha ao soicitar Emprestimo ", "Fechar");
-            return;
+            Navigation.PushModalAsync(new SolicitacaoPage(UsuarioLogado));
+            Navigation.PushAsync(new FuncionarioPage(UsuarioLogado));
         }
     }
 

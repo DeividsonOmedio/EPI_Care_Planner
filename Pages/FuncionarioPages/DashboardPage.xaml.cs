@@ -1,5 +1,6 @@
 using Epi_Care_Planner.Context;
 using Epi_Care_Planner.Model;
+using System.Windows.Input;
 
 namespace Epi_Care_Planner.Pages.FuncionarioPages;
 
@@ -7,6 +8,7 @@ public partial class DashboardPage : ContentPage
 {
     AppDbContext _context = new AppDbContext();
     public Usuario UsuarioLogado { get; set; }
+    public ICommand CarregarSolicitacoesComand { get; set; }
 
     public DashboardPage(Usuario usuarioLogado)
     {
@@ -14,15 +16,22 @@ public partial class DashboardPage : ContentPage
         InitializeComponent();
         CarregarSolicitacoes();
         CarregarEmprestados();
+        CarregarSolicitacoesComand = new Command(() =>
+        {
+            CarregarSolicitacoes();
+            CarregarEmprestados();
+        });
     }
 
+
+    
     public void CarregarEmprestados()
     {
         var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "emprestado" && x.Funcionario == UsuarioLogado.Name).ToList();
-        if (lista == null)
+        if (lista.Count == 0)
         {
-            DisplayAlert("Resposta", "Não ha novas solicitações no momento", "Fechar");
-            return;
+            lblnaoEmp.IsVisible = true;
+            gridEmp.IsVisible = false;
         }
         ListaEpisEmprestado.ItemsSource = lista;
     }
@@ -30,10 +39,10 @@ public partial class DashboardPage : ContentPage
     public void CarregarSolicitacoes()
     {
         var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "pendente" || x.Status.ToLower() == "confirmado" || x.Status.ToLower() == "recusado" && x.Funcionario == UsuarioLogado.Name).ToList();
-        if (lista == null)
+        if (lista.Count == 0)
         {
-            DisplayAlert("Resposta", "Não ha novas solicitações no momento", "Fechar");
-            return;
+            lblnaosolic.IsVisible = true;
+            gridSolic.IsVisible = false;
         }
         ListaSolicitacaoEpis.ItemsSource = lista;
     }

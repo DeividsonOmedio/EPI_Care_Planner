@@ -24,7 +24,7 @@ public partial class ModalComentarioConfirmar : ContentPage
             _context.emprestimos.Update(result);
             _context.SaveChanges();
             DisplayAlert("Sucesso", "Solicitação Confirmada", "Fechar");
-            Navigation.PushAsync(new AlmoxarifePage());
+            Navigation.PopModalAsync();
 
         }
         catch

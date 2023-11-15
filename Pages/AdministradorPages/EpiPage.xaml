@@ -182,35 +182,45 @@
             
             <CollectionView.ItemTemplate>
                 <DataTemplate >
-                    <Grid 
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Ver Detalhes"
+                                               x:Name="detalhesSwipe"
+                                                BackgroundColor="LightGreen"
+                                                Invoked="detalhesSwipe_Invoked" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid 
                         >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                        
-                        <Frame
-                            BorderColor="Green"
+
+                                <Frame
+                            BorderColor="Black"
                             CornerRadius="0"
                             >
-                        <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center"/>
-                        </Frame>
-                        <Frame 
+                                    <Label Text="{Binding Codigo}" TextColor="Black" VerticalTextAlignment="Center"/>
+                                </Frame>
+                                <Frame 
                             Grid.Column="1"
-                            BorderColor="Green"
+                            BorderColor="Black"
                              CornerRadius="0">
-                            <Label  Text="{Binding Nome}"  TextColor="Black"/>
-                        </Frame>
-                        <Frame 
+                                    <Label  Text="{Binding Nome}"  TextColor="Black"/>
+                                </Frame>
+                                <Frame 
                             Grid.Column="2"
-                            BorderColor="Green"
+                            BorderColor="Black"
                              CornerRadius="0">
-                            <Label Grid.Column="2" Text="{Binding QuantidadeAtual}" TextColor="Black"/>
-                        </Frame>
-                    </Grid>
-                </DataTemplate>
+                                    <Label Grid.Column="2" Text="{Binding QuantidadeAtual}" TextColor="Black"/>
+                                </Frame>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
             </CollectionView.ItemTemplate>
 
         </CollectionView>

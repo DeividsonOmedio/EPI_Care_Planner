@@ -14,12 +14,13 @@
             FontAttributes="Bold"
             Opacity=".6"/>
 
+        <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
 
 
         <Grid
+            x:Name="gridEmp"
            Margin="0, 50, 10, 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -30,7 +31,6 @@
             <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"/>
             <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"/>
             <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"/>
-            <Label Grid.Column="3" Text="Previsao" HorizontalOptions="Center" FontSize="Small"/>
         </Grid>
 
 
@@ -57,34 +57,28 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
 
                             <Frame
-                    BorderColor="Green"
+                    BorderColor="Black"
                     CornerRadius="0"
                     >
                                 <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
                             </Frame>
                             <Frame 
                     Grid.Column="1"
-                    BorderColor="Green"
+                    BorderColor="Black"
                      CornerRadius="0">
                                 <Label  Text="{Binding Funcionario}"  TextColor="Black" FontSize="Micro"/>
                             </Frame>
                             <Frame 
                     Grid.Column="2"
-                    BorderColor="Green"
+                    BorderColor="Black"
                      CornerRadius="0">
                                 <Label Grid.Column="2" Text="{Binding DataEmpretimo}" TextColor="Black" FontSize="Micro"/>
                             </Frame>
-                            <Frame 
-                    Grid.Column="3"
-                    BorderColor="Green"
-                     CornerRadius="0">
-                                <Label Grid.Column="2" Text="{Binding DataPrevisaoEmprestimo}" TextColor="Black" FontSize="Micro"/>
-                            </Frame>
+                           
 
                         </Grid>
                     </SwipeView>

@@ -16,18 +16,20 @@ public partial class DashboardPage : ContentPage
     public void CarregarSolicitacoes()
     {
         var lista = _context.emprestimos.Where(x => x.Status.ToLower() == "pendente").ToList();
-        if(lista == null)
+        if(lista.Count == 0)
         {
-            DisplayAlert("Resposta", "Não ha novas solicitações no momento", "Fechar");
-            return;
+            lblnaoemp.IsVisible = true;
+            gridsolicitacoes.IsVisible = false;
+            
         }
         ListaSolicitacoes.ItemsSource = lista;
+        lblnaoemp.IsVisible = false;
 
         var listaConfirmada = _context.emprestimos.Where(x => x.Status.ToLower() == "confirmado").ToList();
-        if (lista == null)
+        if (listaConfirmada.Count == 0)
         {
-            DisplayAlert("Resposta", "Não ha novas solicitações no momento", "Fechar");
-            return;
+            lblnaoemp.IsVisible = true;
+            gridConfirm.IsVisible = false;
         }
         ListaConfirmadas.ItemsSource = listaConfirmada;
 
@@ -47,46 +49,42 @@ public partial class DashboardPage : ContentPage
         int idDoItem = item.Id; // Substitua "Id" pelo nome da propriedade que contém o ID
 
         Navigation.PushModalAsync(new ModalComentarioConfirmar(idDoItem));
+        CarregarSolicitacoes();
+
     }
 
     private void SwipeItem_Invoked_Recusar(object sender, EventArgs e)
     {
-        // Obtém o SwipeItem clicado
         SwipeItem swipeItem = (SwipeItem)sender;
 
-        // Obtém o item associado ao SwipeItem
         Emprestimo item = (Emprestimo)swipeItem.BindingContext;
 
-        // Agora você pode acessar o ID ou qualquer outra propriedade do item
-        int idDoItem = item.Id; // Substitua "Id" pelo nome da propriedade que contém o ID
+        int idDoItem = item.Id; 
 
         Navigation.PushModalAsync(new ModalComentarioRecusar(idDoItem));
+        CarregarSolicitacoes();
     }
     private void SwipeItem_Invoked_Emprestado(object sender, EventArgs e)
     {
-        // Obtém o SwipeItem clicado
         SwipeItem swipeItem = (SwipeItem)sender;
 
-        // Obtém o item associado ao SwipeItem
         Emprestimo item = (Emprestimo)swipeItem.BindingContext;
 
-        // Agora você pode acessar o ID ou qualquer outra propriedade do item
-        int idDoItem = item.Id; // Substitua "Id" pelo nome da propriedade que contém o ID
+        int idDoItem = item.Id; 
 
         Navigation.PushModalAsync(new ModalEmprestar(idDoItem));
+        CarregarSolicitacoes();
     }
 
     private void SwipeItem_Invoked_Cancelado(object sender, EventArgs e)
     {
-        // Obtém o SwipeItem clicado
         SwipeItem swipeItem = (SwipeItem)sender;
 
-        // Obtém o item associado ao SwipeItem
         Emprestimo item = (Emprestimo)swipeItem.BindingContext;
 
-        // Agora você pode acessar o ID ou qualquer outra propriedade do item
-        int idDoItem = item.Id; // Substitua "Id" pelo nome da propriedade que contém o ID
+        int idDoItem = item.Id; 
 
         Navigation.PushModalAsync(new ModalCancelar(idDoItem));
+        CarregarSolicitacoes();
     }
 }
