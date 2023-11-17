@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.Modal.ModalEditarEpi"
-             Title="ModalEditarEpi">
+             Title="ModalEditarEpi"
+             BackgroundColor="Black">
     <VerticalStackLayout
                         VerticalOptions="Center" 
                         HorizontalOptions="Center"
@@ -14,24 +15,25 @@
             FontAttributes="Bold"
             TextTransform="Uppercase"
             Margin="50"
-            FontSize="Title"/>
+            FontSize="Title"
+            TextColor="White"/>
 
 
 
-                        <Label Text="Codigo:" HorizontalOptions="Start"/>
-                        <Entry x:Name="txtCodigo" TextColor="White" HorizontalTextAlignment="Center"/>
+        <Label Text="Codigo:" HorizontalOptions="Start"  TextColor="White" Margin="0,0,0,10"/>
+        <Entry x:Name="txtCodigo"  HorizontalTextAlignment="Center"  BackgroundColor="White"/>
 
-                        <Label Text="Epi:" HorizontalOptions="Start"/>
-                        <Entry  x:Name="txtNome"  TextColor="White" HorizontalTextAlignment="Center"/>
+        <Label Text="Epi:" HorizontalOptions="Start" TextColor="White" Margin="0,0,0,10"/>
+        <Entry  x:Name="txtNome"   HorizontalTextAlignment="Center"  BackgroundColor="White"/>
 
-                        <Label Text="Descrição:" HorizontalOptions="Start"/>
-                        <Entry  x:Name="txtDescricao"  TextColor="White" HorizontalTextAlignment="Center"/>
+        <Label Text="Descrição:" HorizontalOptions="Start" TextColor="White" Margin="0,0,0,10" />
+        <Entry  x:Name="txtDescricao"   HorizontalTextAlignment="Center"  BackgroundColor="White"/>
 
-                        <Label Text="Categoria:" HorizontalOptions="Start"/>
-                        <Entry  x:Name="txtCategoria"  TextColor="White" HorizontalTextAlignment="Center"/>
+        <Label Text="Categoria:" HorizontalOptions="Start" TextColor="White" Margin="0,0,0,10"/>
+        <Entry  x:Name="txtCategoria"   HorizontalTextAlignment="Center"  BackgroundColor="White"/>
 
-                        <Label Text="Quantidade  Atual:" HorizontalOptions="Start"/>
-                        <Entry x:Name="txtQuantidade" TextColor="White" HorizontalTextAlignment="Center"/>
+        <Label Text="Quantidade  Atual:" HorizontalOptions="Start" TextColor="White" Margin="0,0,0,10"/>
+        <Entry x:Name="txtQuantidade"  HorizontalTextAlignment="Center"  BackgroundColor="White"/>
 
                          <Button Text="Confirmar" x:Name="btnConfirmarEpi" Clicked="btnConfirmarEpi_Clicked" WidthRequest="200" Margin="16"/>
 

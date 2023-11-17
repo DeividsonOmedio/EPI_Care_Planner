@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.DashboardPage"
-             Title="DashboardPage">
+             Title="DashboardPage"
+              BackgroundColor="Black">
 
     <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}" Command="{Binding RefreshCommand}">
 
@@ -15,6 +16,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             Margin="16"
+            TextColor="White"
             FontSize="Title"
             TextTransform="Uppercase"
             FontAttributes="Bold"/>
@@ -22,7 +24,7 @@
 
 
 
-                <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhuma solicitação" HorizontalOptions="Center" Margin="16"/>
+                <Label x:Name="lblnaoemp" IsVisible="false" Text="Não há nenhuma solicitação" HorizontalOptions="Center" Margin="16"  TextColor="White"/>
 
 
                 <Grid
@@ -37,10 +39,10 @@
 
 
 
-                    <Label Text="EPI" TranslationX="20"/>
-                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"/>
-                    <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"/>
-                    <Label Grid.Column="3" Text="Comentario" HorizontalOptions="End"/>
+                    <Label Text="EPI" TranslationX="20"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"  TextColor="White"/>
+                    <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"  TextColor="White"/>
+                    <Label Grid.Column="3" Text="Comentario" HorizontalOptions="End"  TextColor="White"/>
                 </Grid>
 
 
@@ -78,7 +80,7 @@
                                 BorderColor="Black"
                                 CornerRadius="0"
                                 >
-                                        <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"/>
+                                        <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Micro"  />
                                     </Frame>
                                     <Frame 
                                 Grid.Column="1"
@@ -114,6 +116,7 @@
                 HorizontalOptions="Center" 
                 Margin="16"
                 FontSize="Title"
+                TextColor="White"
                 TextTransform="Uppercase"
                 FontAttributes="Bold"/>
 
@@ -130,9 +133,9 @@
 
 
 
-                    <Label Text="EPI" TranslationX="20"/>
-                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"/>
-                    <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"/>
+                    <Label Text="EPI" TranslationX="20"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center"  TextColor="White"/>
+                    <Label Grid.Column="2" Text="Retirada" HorizontalOptions="Center"  TextColor="White"/>
                 </Grid>
 
                 <CollectionView

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.FuncionarioPages.ListaEpiPage"
-             Title="ListaEpiPage">
+             Title="ListaEpiPage"
+             BackgroundColor="Black">
     <ScrollView>
     <VerticalStackLayout>
         <Label 
@@ -13,7 +14,7 @@
               FontSize="Title"
               TextTransform="Uppercase"
               FontAttributes="Bold"
-             />
+             TextColor="White"/>
 
        
 
@@ -28,9 +29,9 @@
 
 
 
-                <Label Text="Codigo" />
-                <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center"/>
-                <Label Grid.Column="2" Text="Categoria" HorizontalOptions="Center"  FontSize="12" HorizontalTextAlignment="Center"/>
+                <Label Text="Codigo" TextColor="White"/>
+                <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center" TextColor="White"/>
+                <Label Grid.Column="2" Text="Categoria" HorizontalOptions="Center"  FontSize="12" HorizontalTextAlignment="Center" TextColor="White"/>
             </Grid>
 
 

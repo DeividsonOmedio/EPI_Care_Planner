@@ -17,8 +17,9 @@ namespace Epi_Care_Planner
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<IUsuarioService, UsuarioService>();
             return builder.Build();

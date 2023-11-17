@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.EpiPage"
-             Title="EpiPage">
+             Title="EpiPage"
+             BackgroundColor="Black">
     <VerticalStackLayout
         VerticalOptions="Center"
         HorizontalOptions="Center">
@@ -24,40 +25,49 @@
           x:Name="tagAdicionarEpi"
          HorizontalOptions="Center">
 
-
+               
             <Label
-             Margin="0, 10, 0, 0"
-              Text="Codigo do Epi"/>
+             Margin="0, 10, 0, 10"
+              Text="Codigo do Epi" TextColor="White" />
             <Entry
              x:Name="txtCodigoNovoEpi"
-             Placeholder="Digite o Codigo do Epi"/>
-
+             Placeholder="Digite o Codigo do Epi"
+                BackgroundColor="White"/>
             <Label  
              Margin="0, 10, 0, 0"
-             Text="Nome do Epi"/>
+             Text="Nome do Epi"
+                TextColor="White"/>
             <Entry
              Placeholder="Digite o nome do EPI"
-             x:Name="txtNomeEpiNovo"/>
+             x:Name="txtNomeEpiNovo"
+                 BackgroundColor="White"/>
 
             <Label
-             Margin="0, 10, 0, 0"
-             Text="Descrição do Epi"/>
+             Margin="0, 10"
+             Text="Descrição do Epi"
+                TextColor="White"/>
             <Entry
              Placeholder="Digite a Descrição do Epi"
-             x:Name="txtDescricaoEpiNovo"/>
+             x:Name="txtDescricaoEpiNovo"
+                 BackgroundColor="White"/>
 
             <Label
-              Margin="0, 10, 0, 0"
-              Text="Categoria do Epi"/>
+              Margin="0, 10"
+              Text="Categoria do Epi"
+                 TextColor="White"/>
             <Entry
              Placeholder="Digite a Categoria do Epi"
-             x:Name="txtCategoriaEpiNovo"/>
+             x:Name="txtCategoriaEpiNovo"
+                 BackgroundColor="White"/>
 
             <Label
-              Text="Quantidade de Epi's"/>
+                 Margin="0, 10"
+              Text="Quantidade de Epi's"
+                TextColor="White"/>
             <Entry
              Placeholder="Digite a Quantidade de Epi's"
-             x:Name="txtQuantidadeEpiNovo" />
+             x:Name="txtQuantidadeEpiNovo" 
+                 BackgroundColor="White"/>
 
 
             <Button
@@ -90,17 +100,19 @@
             Margin="16">
 
             <Label Text="BUSCAR EPI"
-       FontSize="Title"
-       Margin="50"
-       Opacity=".6"/>
+               FontSize="Title"
+               Margin="50"
+               Opacity=".6"
+                   TextColor="White"/>
 
             <Label
-            Text="Nome do EPI:"/>
+            Text="Nome do EPI:" TextColor="White" Margin="0,10"/>
             <Entry
                 Placeholder="Digite o nome do EPI"
                 x:Name="txtNomeEpiBusca"
                 Keyboard="Text"
-                ClearButtonVisibility="WhileEditing"/>
+                ClearButtonVisibility="WhileEditing"
+                BackgroundColor="White"/>
             <Button
                 x:Name="btnProcurarEpiPorNome"
                 Text="Procurar"
@@ -111,12 +123,13 @@
 
 
             <Label
-                Text="Codigo do EPI:"/>
+                Text="Codigo do EPI:" TextColor="White"/>
             <Entry
                 Placeholder="Digite o codigo do EPI"
                 x:Name="txtCodigoEpiBusca"
                 Keyboard="Numeric"
-                ClearButtonVisibility="WhileEditing"/>
+                ClearButtonVisibility="WhileEditing"
+                BackgroundColor="White"/>
             <Button
                 x:Name="btnProcurarEpiPorCodigo"
                 Text="Procurar"
@@ -154,9 +167,9 @@
 
 
 
-                <Label Text="Codigo" />
-                <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center"/>
-                <Label Grid.Column="2" Text="Quantidade Atual" HorizontalOptions="Start" TranslationX="1"  FontSize="12" HorizontalTextAlignment="Center"/>
+                <Label Text="Codigo" TextColor="White"/>
+                <Label Grid.Column="1" Text="Nome" HorizontalOptions="Center" TextColor="White"/>
+                <Label Grid.Column="2" Text="Quantidade Atual" HorizontalOptions="Start" TranslationX="1"  FontSize="12" HorizontalTextAlignment="Center" TextColor="White"/>
             </Grid>
 
 

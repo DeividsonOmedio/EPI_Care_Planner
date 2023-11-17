@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AdministradorPages.FuncionariosPage"
-             Title="FuncionariosPage">
+             Title="FuncionariosPage"
+             BackgroundColor="Black">
 
 
 
@@ -27,7 +28,7 @@
             Margin="26">
             
             <Label 
-            Text="Adicionar Funcionario"
+            Text="Adicionar Funcionário"
             TextTransform="Uppercase"
             HorizontalTextAlignment="Center"
             FontAttributes="Bold"
@@ -41,35 +42,46 @@
             />
 
             <Label 
+                Margin="0,0,0, 10"
             Text="Matricula"
             VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+                TextColor="White"/>
             <Entry
             Placeholder="Digite a Matricula do Funcionário"
-            x:Name="txtMatriculaFuncionarioNovo"/>
+            x:Name="txtMatriculaFuncionarioNovo"
+                BackgroundColor="White"/>
 
 
             <Label 
+                Margin="0,0,0, 10"
             Text="Nome"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+                TextColor="White"/>
             <Entry
             Placeholder="Digite o Nome do Funcionario"
-            x:Name="txtNomeFuncionarioNovo"/>
+            x:Name="txtNomeFuncionarioNovo"
+                BackgroundColor="White"/>
 
             <Label 
+                Margin="0,0,0, 10"
             Text="Senha"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+                TextColor="White"/>
             <Entry
             Placeholder="Digite a Senha do Funcionário"
             x:Name="txtSenhaFuncionarioNovo"
-            IsPassword="True"/>
+            IsPassword="True"
+                BackgroundColor="White"/>
 
             <Label 
+                Margin="0,0,0, 10"
                     Text="Funcao"
                     VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+                    HorizontalOptions="Center" 
+                TextColor="White"/>
             <Grid BackgroundColor="AliceBlue">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -78,8 +90,8 @@
             <Picker 
                     x:Name="pickerFuncao"
                     Title="Selecione uma Funcao"
-                    TextColor="Silver"
-                    BackgroundColor="Black"
+                TitleColor="#C8C8C8"
+                    FontAttributes="Bold"
                     SelectedIndexChanged="pickerFuncao_SelectedIndexChanged">
             <Picker.Items>
                     <x:String >Funcionario Geral</x:String>

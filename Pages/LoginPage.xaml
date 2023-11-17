@@ -2,36 +2,64 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.LoginPage"
-             Title="EPI CARE PLANNER">
+             Title="EPI CARE PLANNER"
+                BackgroundColor="Black">
     <StackLayout VerticalOptions="CenterAndExpand"
                  Margin="16"
                  Padding="16">
-
+        <Frame
+            BorderColor="Black"
+            CornerRadius="0">
+            <VerticalStackLayout>
         <Label
             Text="LOGIN"
             VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            FontSize="Title"
+            TextColor="Black"/>
 
         <Label
             x:Name="lblUser"
-            Text="Usuario"/>
-        <Entry
-            Placeholder="Digite seu usuario"
-            x:Name="txtUser"/>
+            Text="Usuario:"
+            TextColor="Black"/>
+                <Frame
+                     BorderColor="Black"
+                    Padding="5,0">
+                    <Entry
+                        Placeholder="Digite seu usuario"
+                        x:Name="txtUser"
+                        PlaceholderColor="Black"
+                        TextColor="Black"
+                        ClearButtonVisibility="WhileEditing"/>
+                </Frame>
 
-        <Label
+               
+                    <Label
              x:Name="lblSenha"
-             Text="Senha"/>
-        <Entry
+             Text="Senha:"
+                        Margin="0, 10, 0,0"
+                        TextColor="Black"/>
+                
+                    <Frame
+                          BorderColor="Black"
+                          Padding="5,0">
+            <Entry
              Placeholder="Digite sua senha"
              x:Name="txtSenha"
-             IsPassword="True"/>
+             IsPassword="True"
+             PlaceholderColor="Black"
+             TextColor="Black"
+             ClearButtonVisibility="WhileEditing"/>
+                </Frame>
 
-        <Button
+                <Button
             Text="Entrar"
             x:Name="btnEntrar"
             Clicked="btnEntrar_Clicked"
-            Margin="16"/>
-
+            Margin="16"
+                   
+                    CornerRadius="20"/>
+            </VerticalStackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

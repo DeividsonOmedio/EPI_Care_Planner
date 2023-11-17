@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.AlmoxarifePages.EmprestadosPage"
-             Title="EmprestadosPage">
+             Title="EmprestadosPage"
+             BackgroundColor="Black">
 
     <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}" Command="{Binding RefreshCommand}">
 
@@ -16,11 +17,12 @@
             HorizontalOptions="Center" 
             Margin="50, 100"
             FontSize="Title"
+                     TextColor="White"
             TextTransform="Uppercase"
             FontAttributes="Bold"
             />
 
-                <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
+                <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"  TextColor="White"/>
 
 
                 <Grid
@@ -34,9 +36,9 @@
 
 
 
-                    <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"/>
-                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"/>
-                    <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"/>
+                    <Label Text="EPI" HorizontalOptions="Center" FontSize="Small"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="Funcionario" HorizontalOptions="Center" FontSize="Small"  TextColor="White"/>
+                    <Label Grid.Column="2" Text="Emprestimo" HorizontalOptions="Center" FontSize="Small"  TextColor="White"/>
                 </Grid>
 
 

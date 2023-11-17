@@ -2,22 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.FuncionarioPages.DashboardPage"
-             Title="DashboardPage">
+             Title="DashboardPage"
+             BackgroundColor="Black">
     <RefreshView x:Name="refreshView" IsRefreshing="{Binding IsRefreshing, Mode=OneWay}" Command="{Binding RefreshCommand}">
 
-        <ScrollView>
-            <VerticalStackLayout>
+        <ScrollView >
+            <VerticalStackLayout   >
                 <Label 
             Text="EPI's Emprestados"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
              Margin="50"
+                     TextColor="White"
               FontSize="Title"
               TextTransform="Uppercase"
               FontAttributes="Bold"
              />
 
-                <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"/>
+                <Label x:Name="lblnaoEmp" IsVisible="false" Text="Não há nenhum emprestimo" HorizontalOptions="Center"  Margin="16"  TextColor="White"/>
 
 
                 <Grid
@@ -30,8 +32,8 @@
 
 
 
-                    <Label Text="EPI" HorizontalOptions="Center"/>
-                    <Label Grid.Column="1" Text="Data Emprestimo" HorizontalOptions="Center" />
+                    <Label Text="EPI" HorizontalOptions="Center"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="Data Emprestimo" HorizontalOptions="Center"  TextColor="White"/>
                 </Grid>
 
                 <CollectionView
@@ -53,13 +55,15 @@
                                 <Frame
                     BorderColor="Black"
                     CornerRadius="0"
+                                    Margin="3, 0, 0, 0"
                     >
-                                    <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center"/>
+                                    <Label Text="{Binding Epi}" TextColor="Black" VerticalTextAlignment="Center" />
                                 </Frame>
                                 <Frame 
                     Grid.Column="1"
                     BorderColor="Black"
-                     CornerRadius="0">
+                     CornerRadius="0"
+                                    Margin="0, 0, 5, 0">
                                     <Label  Text="{Binding DataEmpretimo}"  TextColor="Black"/>
                                 </Frame>
 
@@ -74,10 +78,10 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
              Margin="50"
-  FontSize="Title"
-  TextTransform="Uppercase"
-  FontAttributes="Bold"
- />
+              FontSize="Title"
+              TextTransform="Uppercase"
+              FontAttributes="Bold"
+                    TextColor="White"/>
 
                 <Label x:Name="lblnaosolic" IsVisible="false" Text="Não há nenhuma solicitação" HorizontalOptions="Center"  Margin="16" TextColor="White"/>
 
@@ -95,10 +99,10 @@
 
 
 
-                    <Label Text="EPI" HorizontalOptions="Center" FontSize="Micro"/>
-                    <Label Grid.Column="1" Text="Data Solicitação" HorizontalOptions="Center" FontSize="Micro"/>
-                    <Label Grid.Column="2" Text="Data Retirada" HorizontalOptions="Center" FontSize="Micro" />
-                    <Label Grid.Column="3" Text="Confirmação" HorizontalOptions="Center" FontSize="Micro"/>
+                    <Label Text="EPI" HorizontalOptions="Center" FontSize="Micro"  TextColor="White"/>
+                    <Label Grid.Column="1" Text="Data Solicitação" HorizontalOptions="Center" FontSize="Micro"  TextColor="White"/>
+                    <Label Grid.Column="2" Text="Data Retirada" HorizontalOptions="Center" FontSize="Micro" TextColor="White" />
+                    <Label Grid.Column="3" Text="Confirmação" HorizontalOptions="Center" FontSize="Micro"  TextColor="White"/>
                 </Grid>
 
 

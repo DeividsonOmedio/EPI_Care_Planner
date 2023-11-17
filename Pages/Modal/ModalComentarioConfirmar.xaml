@@ -2,23 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Epi_Care_Planner.Pages.Modal.ModalComentarioConfirmar"
-             Title="ModalComentarioConfirmar">
+             Title="ModalComentarioConfirmar"
+              BackgroundColor="Black">
     <StackLayout
         
         VerticalOptions="CenterAndExpand">
         <Label   Text="Confirmar Solicitação" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
-                 Margin="50"
+                 Margin="30"
                  FontSize="Title"
                  TextTransform="Uppercase"
-                 FontAttributes="Bold"/>
+                 FontAttributes="Bold"
+                 TextColor="White"/>
         <VerticalStackLayout
             Margin="16"
             HorizontalOptions="Center"
             VerticalOptions="Center">
-            <Label Text="Comentario:"/>
+            <Label Text="Comentario:"
+                     TextColor="White"
+                    Margin="0,0,0,10"/>
             <Entry
                 x:Name="txtComentario"
-                Placeholder="Escreva aqui o comentario"/>
+                Placeholder="Escreva aqui o comentario"
+                BackgroundColor="White"/>
             <Button Text="Confirmar"
                     x:Name="btnConfirmar"
                     Clicked="btnConfirmar_Clicked"

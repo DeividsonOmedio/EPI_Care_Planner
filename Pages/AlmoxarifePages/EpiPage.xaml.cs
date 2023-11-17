@@ -104,7 +104,6 @@ public partial class EpiPage : ContentPage
         if (result != null)
         {
             Navigation.PushModalAsync(new ModalEpi(result));
-            (Application.Current.MainPage as NavigationPage)?.Navigation?.PopToRootAsync();
         }
         else
         {
@@ -130,8 +129,7 @@ public partial class EpiPage : ContentPage
     {
         SwipeItem swipeItem = (SwipeItem)sender;
         Epi item = (Epi)swipeItem.BindingContext;
-        Navigation.PushModalAsync(new ModalEpi(item));
-        (Application.Current.MainPage as NavigationPage)?.Navigation?.PopToRootAsync();
+        Navigation.PushAsync(new ModalEpi(item));
     }
 
 }
